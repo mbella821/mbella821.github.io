@@ -3,1701 +3,1268 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Dr. Mostafa BELLA - Signal Processing Researcher & Research Engineer. PhD in Signal Processing & AI. Working on ESA Euclid and LISA missions, Blind Source Separation, and Deep Learning.">
-    <meta name="keywords" content="Mostafa Bella, Signal Processing, Blind Source Separation, Deep Learning, ESA Euclid, LISA, Gravitational Waves, Audio Processing, IRAP, Toulouse">
-    <meta name="author" content="Dr. Mostafa BELLA">
-    <meta property="og:title" content="Dr. Mostafa BELLA — Signal Processing Researcher">
-    <meta property="og:description" content="Signal Processing Researcher working on ESA Euclid & LISA missions. PhD in Signal Processing & AI.">
-    <meta property="og:type" content="website">
-    <title>Dr. Mostafa BELLA — Signal Processing Researcher & AI Engineer</title>
+    <meta name="description" content="Dr. Mostafa BELLA - Signal Processing Researcher & Research Engineer. PhD in Signal Processing & AI. ESA Euclid & LISA missions.">
+    <title>Dr. Mostafa BELLA — Signal Processing Researcher</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root {
-            --bg: #05070a;
-            --bg-secondary: #0a0f1a;
-            --bg-card: #0d1321;
-            --bg-card-hover: #131b2e;
-            --bg-elevated: #111827;
-            --text: #f1f5f9;
-            --text-secondary: #cbd5e1;
-            --text-muted: #64748b;
+            --bg: #020408;
+            --bg-secondary: #080c14;
+            --bg-card: #0a0f1a;
+            --bg-card-hover: #101829;
+            --bg-elevated: #0d1321;
+            --text: #f0f4f8;
+            --text-secondary: #b8c5d6;
+            --text-muted: #5a6a7f;
             --accent: #38bdf8;
             --accent2: #818cf8;
             --accent3: #c084fc;
             --accent4: #f472b6;
             --accent5: #34d399;
-            --border: rgba(56, 189, 248, 0.12);
+            --border: rgba(56, 189, 248, 0.1);
             --border-hover: rgba(56, 189, 248, 0.25);
             --gradient: linear-gradient(135deg, #38bdf8, #818cf8, #c084fc);
-            --gradient2: linear-gradient(135deg, #f472b6, #c084fc, #818cf8);
-            --gradient3: linear-gradient(135deg, #34d399, #38bdf8, #818cf8);
-            --shadow-glow: 0 0 40px rgba(56, 189, 248, 0.15);
-            --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
+            --gradient-warm: linear-gradient(135deg, #f472b6, #c084fc);
+            --gradient-cool: linear-gradient(135deg, #34d399, #38bdf8);
+            --shadow-glow: 0 0 60px rgba(56, 189, 248, 0.12);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', sans-serif;
             background: var(--bg);
             color: var(--text);
             line-height: 1.7;
             overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
         }
-        ::selection { background: rgba(56, 189, 248, 0.3); color: var(--text); }
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::selection { background: rgba(56,189,248,0.25); }
+        ::-webkit-scrollbar { width: 5px; }
         ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+
+        /* NAVBAR */
         .navbar {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            position: fixed; top: 0; left: 0; right: 0;
+            display: flex; justify-content: space-between; align-items: center;
             padding: 1rem 4rem;
-            background: rgba(5, 7, 10, 0.8);
-            backdrop-filter: blur(20px) saturate(180%);
+            background: rgba(2,4,8,0.7);
+            backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
             z-index: 1000;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
         }
-        .navbar.scrolled {
-            padding: 0.75rem 4rem;
-            background: rgba(5, 7, 10, 0.95);
-            box-shadow: 0 4px 30px rgba(0,0,0,0.3);
-        }
+        .navbar.scrolled { background: rgba(2,4,8,0.95); padding: 0.7rem 4rem; }
         .nav-brand {
-            font-size: 1.4rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            cursor: pointer;
+            font-size: 1.5rem; font-weight: 800; letter-spacing: -1px;
+            background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            align-items: center;
-        }
+        .nav-links { display: flex; gap: 2rem; }
         .nav-link {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.88rem;
-            transition: all 0.3s ease;
-            position: relative;
-            padding: 0.25rem 0;
+            color: var(--text-muted); text-decoration: none; font-weight: 500; font-size: 0.85rem;
+            transition: all 0.3s; position: relative; padding: 0.2rem 0;
         }
         .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient);
-            transition: width 0.3s ease;
+            content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px;
+            background: var(--gradient); transition: width 0.3s;
         }
         .nav-link:hover { color: var(--accent); }
         .nav-link:hover::after { width: 100%; }
-        .nav-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
+        .nav-toggle { display: none; background: none; border: none; color: var(--text); font-size: 1.5rem; cursor: pointer; }
+
+        /* HERO */
         .hero {
-            position: relative;
-            min-height: 100vh;
-            display: grid;
-            grid-template-columns: 1.3fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            padding: 10rem 4rem 6rem;
-            max-width: 1400px;
-            margin: 0 auto;
+            position: relative; min-height: 100vh;
+            display: grid; grid-template-columns: 1.2fr 1fr;
+            gap: 3rem; align-items: center;
+            padding: 10rem 4rem 6rem; max-width: 1400px; margin: 0 auto;
             overflow: hidden;
         }
-        .hero-bg {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: 
-                radial-gradient(ellipse at 20% 50%, rgba(56, 189, 248, 0.08) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 20%, rgba(129, 140, 248, 0.06) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 80%, rgba(192, 132, 252, 0.05) 0%, transparent 50%);
-            pointer-events: none;
+        .hero-wave-bg {
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(ellipse at 30% 50%, rgba(56,189,248,0.06) 0%, transparent 60%),
+                        radial-gradient(ellipse at 70% 20%, rgba(129,140,248,0.04) 0%, transparent 50%);
+            pointer-events: none; z-index: 0;
         }
         .hero-content { position: relative; z-index: 2; }
         .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1.25rem;
-            background: rgba(56, 189, 248, 0.08);
-            border: 1px solid var(--border);
-            border-radius: 50px;
-            font-size: 0.82rem;
-            color: var(--accent);
-            font-weight: 500;
-            margin-bottom: 2rem;
-            animation: fadeInUp 0.8s ease;
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0.5rem 1.2rem; background: rgba(56,189,248,0.08);
+            border: 1px solid var(--border); border-radius: 50px;
+            font-size: 0.8rem; color: var(--accent); font-weight: 500; margin-bottom: 1.5rem;
         }
-        .hero-badge i { font-size: 0.75rem; }
-        .hero-title {
-            font-size: 4rem;
-            font-weight: 900;
-            margin-bottom: 0.75rem;
-            line-height: 1.05;
-            letter-spacing: -1.5px;
-            animation: fadeInUp 0.8s ease 0.1s both;
-        }
-        .gradient-text {
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .hero-subtitle {
-            font-size: 1.35rem;
-            color: var(--accent2);
-            margin-bottom: 1.5rem;
-            font-weight: 500;
-            animation: fadeInUp 0.8s ease 0.2s both;
-        }
-        .hero-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.25rem;
-            margin-bottom: 2rem;
-            animation: fadeInUp 0.8s ease 0.3s both;
-        }
-        .meta-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-        .meta-item i { color: var(--accent); font-size: 0.85rem; }
-        .hero-bio {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-bottom: 2.5rem;
-            line-height: 1.9;
-            max-width: 600px;
-            animation: fadeInUp 0.8s ease 0.4s both;
-        }
+        .hero-title { font-size: 4rem; font-weight: 900; line-height: 1.05; letter-spacing: -2px; margin-bottom: 0.5rem; }
+        .gradient-text { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-subtitle { font-size: 1.3rem; color: var(--accent2); font-weight: 500; margin-bottom: 1.2rem; }
+        .hero-meta { display: flex; flex-wrap: wrap; gap: 1.2rem; margin-bottom: 1.5rem; }
+        .meta-item { display: flex; align-items: center; gap: 0.4rem; font-size: 0.88rem; color: var(--text-muted); }
+        .meta-item i { color: var(--accent); font-size: 0.8rem; }
+        .hero-bio { font-size: 1.05rem; color: var(--text-secondary); max-width: 580px; margin-bottom: 2rem; line-height: 1.9; }
         .hero-bio strong { color: var(--text); font-weight: 600; }
-        .hero-bio em { 
-            color: var(--accent); 
-            font-style: normal; 
-            background: rgba(56, 189, 248, 0.1);
-            padding: 0.1rem 0.4rem;
-            border-radius: 4px;
-        }
-        .hero-cta { 
-            display: flex; 
-            gap: 1rem; 
-            flex-wrap: wrap; 
-            animation: fadeInUp 0.8s ease 0.5s both;
-        }
+        .hero-bio em { color: var(--accent); font-style: normal; background: rgba(56,189,248,0.08); padding: 0.1rem 0.4rem; border-radius: 4px; }
+        .hero-cta { display: flex; gap: 0.8rem; flex-wrap: wrap; }
         .btn {
-            padding: 0.85rem 1.75rem;
-            border-radius: 10px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-            font-size: 0.92rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-family: inherit;
+            padding: 0.8rem 1.6rem; border-radius: 10px; font-weight: 600; text-decoration: none;
+            transition: all 0.3s; cursor: pointer; border: none; font-size: 0.9rem;
+            display: inline-flex; align-items: center; gap: 0.5rem; font-family: inherit;
         }
-        .btn-primary {
-            background: var(--gradient);
-            color: white;
-            box-shadow: 0 4px 20px rgba(56, 189, 248, 0.3);
-        }
-        .btn-primary:hover { 
-            transform: translateY(-2px); 
-            box-shadow: 0 8px 30px rgba(56, 189, 248, 0.4); 
-        }
-        .btn-outline {
-            background: transparent;
-            color: var(--accent);
-            border: 1.5px solid var(--border);
-        }
-        .btn-outline:hover { 
-            background: rgba(56, 189, 248, 0.08); 
-            border-color: var(--accent);
-        }
-        .btn-small { padding: 0.5rem 1rem; font-size: 0.85rem; }
-        .btn-ghost {
-            background: transparent;
-            color: var(--text-muted);
-            border: 1px solid var(--border);
-        }
+        .btn-primary { background: var(--gradient); color: white; box-shadow: 0 4px 20px rgba(56,189,248,0.25); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(56,189,248,0.35); }
+        .btn-outline { background: transparent; color: var(--accent); border: 1.5px solid var(--border); }
+        .btn-outline:hover { background: rgba(56,189,248,0.06); border-color: var(--accent); }
+        .btn-ghost { background: transparent; color: var(--text-muted); border: 1px solid var(--border); }
         .btn-ghost:hover { color: var(--text); border-color: var(--text-muted); }
-        .hero-visual {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: fadeIn 1.2s ease 0.6s both;
-        }
-        .orbit-system {
-            position: relative;
-            width: 400px;
-            height: 400px;
-        }
-        .orbit {
-            position: absolute;
-            border: 1px solid rgba(56, 189, 248, 0.15);
-            border-radius: 50%;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-        }
-        .orbit-1 { width: 100px; height: 100px; animation: spin 10s linear infinite; }
-        .orbit-2 { width: 200px; height: 200px; animation: spin 16s linear infinite reverse; }
-        .orbit-3 { width: 300px; height: 300px; animation: spin 22s linear infinite; }
-        .orbit-4 { width: 380px; height: 380px; border-color: rgba(129, 140, 248, 0.1); animation: spin 28s linear infinite reverse; }
-        .core {
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            width: 70px; height: 70px;
-            background: var(--gradient);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            box-shadow: 0 0 50px rgba(56, 189, 248, 0.4), inset 0 0 20px rgba(255,255,255,0.1);
-            animation: pulse 3s ease-in-out infinite;
-            z-index: 10;
-        }
-        .satellite {
-            position: absolute;
-            width: 44px; height: 44px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            box-shadow: var(--shadow-card);
-            animation: float 5s ease-in-out infinite;
-            z-index: 5;
-        }
-        .sat-1 { top: 5%; left: 55%; animation-delay: 0s; }
-        .sat-2 { top: 75%; left: 5%; animation-delay: 1.5s; }
-        .sat-3 { top: 25%; left: 88%; animation-delay: 3s; }
-        .sat-label {
-            position: absolute;
-            bottom: -22px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 0.6rem;
-            color: var(--text-muted);
-            white-space: nowrap;
-            font-family: 'JetBrains Mono', monospace;
-        }
-        section { padding: 6rem 4rem; max-width: 1200px; margin: 0 auto; position: relative; }
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
+        .btn-small { padding: 0.45rem 1rem; font-size: 0.82rem; }
+
+        .hero-visual { position: relative; z-index: 1; display: flex; justify-content: center; align-items: center; }
+
+        /* SECTIONS */
+        section { padding: 5rem 4rem; max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 3.5rem; }
         .section-label {
-            display: inline-block;
-            padding: 0.35rem 1rem;
-            background: rgba(56, 189, 248, 0.08);
-            border: 1px solid var(--border);
-            border-radius: 50px;
-            font-size: 0.8rem;
-            color: var(--accent);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
+            display: inline-block; padding: 0.3rem 0.9rem; background: rgba(56,189,248,0.06);
+            border: 1px solid var(--border); border-radius: 50px; font-size: 0.75rem;
+            color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.8rem;
         }
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            letter-spacing: -1px;
-        }
-        .section-desc {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.7;
-        }
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
-        }
-        .about-text h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: var(--text);
-        }
-        .about-text p {
-            color: var(--text-secondary);
-            margin-bottom: 1.25rem;
-            line-height: 1.8;
-        }
-        .about-text strong { color: var(--accent); font-weight: 600; }
-        .about-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-        }
+        .section-title { font-size: 2.4rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 0.8rem; }
+        .section-desc { color: var(--text-muted); font-size: 1rem; max-width: 600px; margin: 0 auto; line-height: 1.7; }
+
+        /* ABOUT */
+        .about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3rem; align-items: start; }
+        .about-text h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem; }
+        .about-text p { color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.8; font-size: 0.95rem; }
+        .about-text strong { color: var(--accent); }
+        .stats-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1rem; }
         .stat-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 1.75rem;
-            text-align: center;
-            transition: all 0.3s ease;
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
+            padding: 1.5rem; text-align: center; transition: all 0.3s;
         }
-        .stat-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--border-hover);
-            box-shadow: var(--shadow-glow);
+        .stat-card:hover { transform: translateY(-4px); border-color: var(--border-hover); box-shadow: var(--shadow-glow); }
+        .stat-number { font-size: 2.2rem; font-weight: 800; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .stat-label { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.3rem; }
+
+        /* PIPELINE DIAGRAM */
+        .pipeline-section { max-width: 1000px; }
+        .pipeline-container {
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 24px;
+            padding: 2.5rem; position: relative; overflow: hidden;
         }
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            line-height: 1;
-            margin-bottom: 0.5rem;
+        .pipeline-container::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            background: var(--gradient); opacity: 0.6;
         }
-        .stat-label {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            font-weight: 500;
+        .pipeline-title { text-align: center; font-size: 1.1rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 2rem; }
+        .pipeline-flow {
+            display: flex; align-items: center; justify-content: space-between; gap: 0.5rem;
+            margin-bottom: 2rem; position: relative;
         }
-        .domains-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
+        .pipeline-step {
+            flex: 1; text-align: center; padding: 1.2rem 0.5rem;
+            background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 14px;
+            transition: all 0.3s; position: relative;
         }
+        .pipeline-step:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 10px 30px rgba(56,189,248,0.1); }
+        .pipeline-step .step-icon { font-size: 1.6rem; margin-bottom: 0.5rem; }
+        .pipeline-step h4 { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.3rem; }
+        .pipeline-step p { font-size: 0.72rem; color: var(--text-muted); }
+        .pipeline-arrow { color: var(--accent); font-size: 1.2rem; opacity: 0.5; }
+        .pipeline-branches {
+            display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem;
+        }
+        .branch-card {
+            padding: 1.2rem; border-radius: 14px; border: 1px solid var(--border);
+            background: rgba(56,189,248,0.02); transition: all 0.3s;
+        }
+        .branch-card:hover { border-color: var(--border-hover); }
+        .branch-card.euclid-branch { border-top: 2px solid var(--accent4); }
+        .branch-card.lisa-branch { border-top: 2px solid var(--accent); }
+        .branch-card.audio-branch { border-top: 2px solid var(--accent5); }
+        .branch-card h5 { font-size: 0.85rem; margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.4rem; }
+        .branch-card p { font-size: 0.78rem; color: var(--text-muted); line-height: 1.6; }
+
+        /* DOMAINS */
+        .domains-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.2rem; }
         .domain-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 2.5rem 2rem;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px;
+            padding: 2rem; transition: all 0.4s; position: relative; overflow: hidden;
         }
         .domain-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 3px;
-            opacity: 0;
-            transition: opacity 0.4s ease;
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; opacity: 0; transition: opacity 0.4s;
         }
-        .domain-card:hover {
-            transform: translateY(-8px);
-            background: var(--bg-card-hover);
-            border-color: var(--border-hover);
-            box-shadow: var(--shadow-glow);
-        }
+        .domain-card:hover { transform: translateY(-6px); border-color: var(--border-hover); box-shadow: var(--shadow-glow); }
         .domain-card:hover::before { opacity: 1; }
         .domain-euclid::before { background: linear-gradient(90deg, #f472b6, #c084fc); }
         .domain-lisa::before { background: linear-gradient(90deg, #38bdf8, #818cf8); }
         .domain-audio::before { background: linear-gradient(90deg, #34d399, #38bdf8); }
-        .domain-icon {
-            width: 56px; height: 56px;
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.6rem;
-            margin-bottom: 1.5rem;
-        }
-        .domain-euclid .domain-icon { background: rgba(244, 114, 182, 0.1); }
-        .domain-lisa .domain-icon { background: rgba(56, 189, 248, 0.1); }
-        .domain-audio .domain-icon { background: rgba(52, 211, 153, 0.1); }
-        .domain-card h3 { font-size: 1.25rem; margin-bottom: 0.75rem; font-weight: 700; }
-        .domain-card p { color: var(--text-muted); font-size: 0.92rem; margin-bottom: 1.25rem; line-height: 1.7; }
-        .domain-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-        .tag {
-            padding: 0.3rem 0.7rem;
-            background: rgba(56, 189, 248, 0.08);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            font-size: 0.72rem;
-            color: var(--accent);
-            font-weight: 500;
-        }
-        .projects-section { display: flex; flex-direction: column; gap: 2.5rem; }
+        .domain-illustration { width: 100%; height: 140px; margin-bottom: 1.2rem; }
+        .domain-card h3 { font-size: 1.15rem; margin-bottom: 0.6rem; }
+        .domain-card p { color: var(--text-muted); font-size: 0.88rem; line-height: 1.7; margin-bottom: 1rem; }
+        .domain-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+        .tag { padding: 0.25rem 0.6rem; background: rgba(56,189,248,0.06); border: 1px solid var(--border); border-radius: 20px; font-size: 0.7rem; color: var(--accent); }
+
+        /* PROJECTS */
+        .projects-section { display: flex; flex-direction: column; gap: 2rem; }
         .project-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 2.5rem;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px;
+            padding: 2.5rem; transition: all 0.4s; position: relative; overflow: hidden;
         }
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0;
-            width: 4px; height: 100%;
-            background: var(--gradient);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-        .project-card:hover { 
-            border-color: var(--border-hover); 
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-glow);
-        }
+        .project-card:hover { border-color: var(--border-hover); transform: translateY(-3px); box-shadow: var(--shadow-glow); }
+        .project-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--gradient); opacity: 0; transition: opacity 0.4s; }
         .project-card:hover::before { opacity: 1; }
-        .project-header {
-            display: flex;
-            align-items: flex-start;
-            gap: 1.25rem;
-            margin-bottom: 1.5rem;
-        }
-        .project-icon {
-            width: 52px; height: 52px;
-            border-radius: 14px;
-            background: rgba(56, 189, 248, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            flex-shrink: 0;
-        }
-        .project-info h3 { font-size: 1.35rem; margin-bottom: 0.35rem; font-weight: 700; }
-        .project-subtitle { color: var(--text-muted); font-size: 0.9rem; }
-        .project-body > p { color: var(--text-secondary); margin-bottom: 1.75rem; line-height: 1.8; font-size: 0.98rem; }
-        .project-section-title {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.75rem;
-            margin-top: 1.5rem;
-        }
-        .project-features {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.6rem;
-            margin-bottom: 1.5rem;
-        }
-        .feature {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            padding: 0.6rem 0.9rem;
-            background: rgba(56, 189, 248, 0.04);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            transition: all 0.3s ease;
-        }
-        .feature:hover { background: rgba(56, 189, 248, 0.08); border-color: var(--border-hover); }
-        .feature i { color: var(--accent5); font-size: 0.75rem; }
-        .project-pub {
-            padding: 1.25rem;
-            background: rgba(129, 140, 248, 0.06);
-            border-left: 3px solid var(--accent2);
-            border-radius: 0 12px 12px 0;
-            margin-bottom: 1.25rem;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
+        .project-header { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.2rem; }
+        .project-icon { width: 48px; height: 48px; border-radius: 12px; background: rgba(56,189,248,0.08); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; }
+        .project-info h3 { font-size: 1.25rem; margin-bottom: 0.2rem; }
+        .project-subtitle { color: var(--text-muted); font-size: 0.85rem; }
+        .project-body > p { color: var(--text-secondary); font-size: 0.94rem; line-height: 1.8; margin-bottom: 1.5rem; }
+        .project-section-title { font-size: 0.8rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin: 1.5rem 0 0.6rem; }
+        .method-diagram { width: 100%; margin: 1rem 0 1.5rem; }
+        .project-features { display: grid; grid-template-columns: repeat(2,1fr); gap: 0.5rem; margin-bottom: 1.2rem; }
+        .feature { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0.8rem; background: rgba(56,189,248,0.03); border: 1px solid var(--border); border-radius: 8px; font-size: 0.82rem; color: var(--text-secondary); }
+        .feature i { color: var(--accent5); font-size: 0.7rem; }
+        .project-pub { padding: 1rem; background: rgba(129,140,248,0.05); border-left: 3px solid var(--accent2); border-radius: 0 10px 10px 0; margin-bottom: 1rem; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; }
         .project-pub strong { color: var(--accent2); }
         .project-pub a { color: var(--accent); text-decoration: none; }
-        .project-pub a:hover { text-decoration: underline; }
-        .project-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.25rem;
-        }
-        .stack-item {
-            padding: 0.35rem 0.85rem;
-            background: rgba(56, 189, 248, 0.08);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            font-size: 0.78rem;
-            color: var(--accent);
-            font-family: 'JetBrains Mono', monospace;
-            font-weight: 500;
-        }
-        .project-links { display: flex; gap: 0.75rem; flex-wrap: wrap; }
-        .areas-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-        .area-group {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-        }
-        .area-group:hover {
-            border-color: var(--border-hover);
-            transform: translateY(-4px);
-        }
-        .area-group h4 {
-            font-size: 1.1rem;
-            margin-bottom: 1.25rem;
-            color: var(--accent);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .area-group h4 i { font-size: 0.9rem; }
-        .area-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-        .area-tag {
-            padding: 0.45rem 0.9rem;
-            background: var(--bg-elevated);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            font-size: 0.82rem;
-            color: var(--text-muted);
-            transition: all 0.3s ease;
-            cursor: default;
-        }
-        .area-tag:hover {
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--accent);
-            border-color: var(--accent);
-            transform: translateY(-2px);
-        }
-        .pub-category { margin-bottom: 3rem; }
-        .pub-category-header {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 1.5rem;
-        }
-        .pub-category-header h3 { font-size: 1.15rem; color: var(--accent2); font-weight: 600; }
-        .pub-category-header .pub-count {
-            padding: 0.2rem 0.6rem;
-            background: rgba(129, 140, 248, 0.1);
-            border-radius: 20px;
-            font-size: 0.75rem;
-            color: var(--accent2);
-            font-weight: 600;
-        }
-        .pub-list { display: flex; flex-direction: column; gap: 1rem; }
-        .pub-item {
-            display: flex;
-            gap: 1.25rem;
-            padding: 1.5rem;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            transition: all 0.3s ease;
-        }
-        .pub-item:hover { 
-            border-color: var(--border-hover); 
-            transform: translateX(6px);
-            box-shadow: var(--shadow-card);
-        }
-        .pub-year {
-            min-width: 55px;
-            font-weight: 700;
-            color: var(--accent);
-            font-size: 0.95rem;
-            font-family: 'JetBrains Mono', monospace;
-        }
-        .pub-content { flex: 1; }
-        .pub-content strong { 
-            color: var(--text); 
-            display: block; 
-            margin-bottom: 0.4rem; 
-            font-size: 0.98rem;
-            line-height: 1.5;
-        }
-        .pub-journal { 
-            color: var(--accent2); 
-            font-size: 0.85rem; 
-            margin-bottom: 0.3rem;
-            font-weight: 500;
-        }
-        .pub-authors { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.5rem; }
-        .pub-links { display: flex; gap: 0.75rem; margin-top: 0.75rem; }
-        .pub-link {
-            font-size: 0.8rem;
-            color: var(--accent);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.35rem;
-            transition: all 0.3s ease;
-        }
-        .pub-link:hover { color: var(--accent2); }
-        .pub-link i { font-size: 0.75rem; }
+        .project-stack { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
+        .stack-item { padding: 0.3rem 0.7rem; background: rgba(56,189,248,0.06); border-radius: 6px; font-size: 0.75rem; color: var(--accent); font-family: 'JetBrains Mono', monospace; }
+        .project-links { display: flex; gap: 0.6rem; }
+
+        /* OPEN SOURCE */
         .repo-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 2.5rem;
-            transition: all 0.4s ease;
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px;
+            padding: 2rem; transition: all 0.3s;
         }
-        .repo-card:hover {
-            border-color: var(--border-hover);
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-glow);
-        }
-        .repo-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 1.25rem;
-        }
-        .repo-name {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--text);
-        }
-        .repo-name i { color: var(--accent); }
-        .repo-lang {
-            padding: 0.3rem 0.8rem;
-            background: rgba(56, 189, 248, 0.1);
-            border-radius: 20px;
-            font-size: 0.78rem;
-            color: var(--accent);
-            font-family: 'JetBrains Mono', monospace;
-            font-weight: 500;
-        }
-        .repo-desc {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
-        }
+        .repo-card:hover { border-color: var(--border-hover); box-shadow: var(--shadow-glow); }
+        .repo-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+        .repo-name { display: flex; align-items: center; gap: 0.6rem; font-size: 1.1rem; font-weight: 700; }
+        .repo-lang { padding: 0.25rem 0.7rem; background: rgba(56,189,248,0.08); border-radius: 20px; font-size: 0.75rem; color: var(--accent); font-family: 'JetBrains Mono', monospace; }
+        .repo-desc { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1rem; }
         .repo-structure {
-            background: var(--bg-elevated);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.25rem;
-            margin-bottom: 1.5rem;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.78rem;
-            line-height: 1.8;
-            color: var(--text-muted);
-            overflow-x: auto;
+            background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 12px;
+            padding: 1rem; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem;
+            line-height: 1.8; color: var(--text-muted); overflow-x: auto; margin-bottom: 1rem;
         }
         .repo-structure .dir { color: var(--accent); }
         .repo-structure .file { color: var(--text-secondary); }
         .repo-structure .comment { color: var(--text-muted); font-style: italic; }
-        .repo-meta {
-            display: flex;
-            gap: 1.5rem;
-            margin-bottom: 1.25rem;
-        }
-        .repo-meta-item {
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-        .repo-meta-item i { font-size: 0.8rem; }
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2.5rem;
-        }
-        .skill-category {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-        }
-        .skill-category:hover { border-color: var(--border-hover); }
-        .skill-category h4 { 
-            font-size: 1.05rem; 
-            margin-bottom: 1.5rem; 
-            color: var(--accent3);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .skill-bars { display: flex; flex-direction: column; gap: 1rem; }
-        .skill-bar {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        .skill-info {
-            min-width: 150px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .skill-name {
-            font-size: 0.88rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-        }
-        .skill-percent {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            font-family: 'JetBrains Mono', monospace;
-        }
-        .skill-track {
-            flex: 1;
-            height: 6px;
-            background: var(--bg-elevated);
-            border-radius: 3px;
-            overflow: hidden;
-        }
-        .skill-level {
-            height: 100%;
-            border-radius: 3px;
-            background: var(--gradient);
-            transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-        }
-        .skill-level::after {
-            content: '';
-            position: absolute;
-            top: 0; right: 0;
-            width: 20px; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2));
-            border-radius: 0 3px 3px 0;
-        }
+
+        /* RESEARCH AREAS */
+        .areas-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+        .area-group { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 1.8rem; }
+        .area-group h4 { font-size: 1rem; margin-bottom: 1rem; color: var(--accent); display: flex; align-items: center; gap: 0.5rem; }
+        .area-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+        .area-tag { padding: 0.4rem 0.8rem; background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 8px; font-size: 0.78rem; color: var(--text-muted); transition: all 0.3s; cursor: default; }
+        .area-tag:hover { background: rgba(56,189,248,0.08); color: var(--accent); border-color: var(--accent); transform: translateY(-2px); }
+
+        /* PUBLICATIONS */
+        .pub-category { margin-bottom: 2.5rem; }
+        .pub-category-header { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1.2rem; }
+        .pub-category-header h3 { font-size: 1.05rem; color: var(--accent2); }
+        .pub-count { padding: 0.15rem 0.5rem; background: rgba(129,140,248,0.1); border-radius: 20px; font-size: 0.7rem; color: var(--accent2); font-weight: 600; }
+        .pub-list { display: flex; flex-direction: column; gap: 0.8rem; }
+        .pub-item { display: flex; gap: 1rem; padding: 1.2rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; transition: all 0.3s; }
+        .pub-item:hover { border-color: var(--border-hover); transform: translateX(5px); }
+        .pub-year { min-width: 50px; font-weight: 700; color: var(--accent); font-size: 0.9rem; font-family: 'JetBrains Mono', monospace; }
+        .pub-content strong { color: var(--text); display: block; margin-bottom: 0.3rem; font-size: 0.94rem; }
+        .pub-journal { color: var(--accent2); font-size: 0.8rem; margin-bottom: 0.2rem; }
+        .pub-authors { color: var(--text-muted); font-size: 0.8rem; }
+        .pub-links { display: flex; gap: 0.6rem; margin-top: 0.5rem; }
+        .pub-link { font-size: 0.78rem; color: var(--accent); text-decoration: none; }
+        .pub-link:hover { color: var(--accent2); }
+
+        /* SKILLS RADAR */
+        .skills-container { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+        .skill-category { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 1.8rem; }
+        .skill-category h4 { font-size: 1rem; margin-bottom: 1.2rem; color: var(--accent3); display: flex; align-items: center; gap: 0.5rem; }
+        .skill-bars { display: flex; flex-direction: column; gap: 0.9rem; }
+        .skill-bar { display: flex; align-items: center; gap: 0.8rem; }
+        .skill-name { min-width: 130px; font-size: 0.85rem; color: var(--text-secondary); }
+        .skill-track { flex: 1; height: 6px; background: var(--bg-elevated); border-radius: 3px; overflow: hidden; }
+        .skill-level { height: 100%; border-radius: 3px; background: var(--gradient); }
+        .radar-container { display: flex; justify-content: center; align-items: center; }
+
+        /* TIMELINE */
         .timeline { position: relative; padding-left: 2.5rem; }
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0.6rem;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--gradient);
-            border-radius: 2px;
-        }
-        .timeline-item {
-            position: relative;
-            margin-bottom: 2.5rem;
-            padding-left: 2rem;
-        }
-        .timeline-item:last-child { margin-bottom: 0; }
-        .timeline-marker {
-            position: absolute;
-            left: -2.5rem;
-            top: 0.25rem;
-            width: 32px; height: 32px;
-            background: var(--bg-card);
-            border: 2px solid var(--accent);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.85rem;
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
-        }
-        .timeline-content { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem; transition: all 0.3s ease; }
-        .timeline-content:hover { border-color: var(--border-hover); }
-        .timeline-content h4 { font-size: 1.15rem; margin-bottom: 0.35rem; font-weight: 700; }
-        .timeline-place { color: var(--accent); font-size: 0.9rem; margin-bottom: 0.75rem; font-weight: 500; }
-        .timeline-place i { margin-right: 0.3rem; }
-        .timeline-thesis { color: var(--text-muted); font-size: 0.9rem; font-style: italic; line-height: 1.6; }
-        .timeline-date {
-            display: inline-block;
-            padding: 0.2rem 0.6rem;
-            background: rgba(56, 189, 248, 0.08);
-            border-radius: 6px;
-            font-size: 0.75rem;
-            color: var(--accent);
-            font-family: 'JetBrains Mono', monospace;
-            margin-top: 0.75rem;
-        }
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.25rem;
-        }
+        .timeline::before { content: ''; position: absolute; left: 0.5rem; top: 0; bottom: 0; width: 2px; background: var(--gradient); border-radius: 2px; }
+        .timeline-item { position: relative; margin-bottom: 2rem; padding-left: 1.8rem; }
+        .timeline-marker { position: absolute; left: -2.3rem; top: 0.2rem; width: 30px; height: 30px; background: var(--bg-card); border: 2px solid var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; }
+        .timeline-content { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; }
+        .timeline-content h4 { font-size: 1.05rem; margin-bottom: 0.3rem; }
+        .timeline-place { color: var(--accent); font-size: 0.85rem; margin-bottom: 0.5rem; }
+        .timeline-thesis { color: var(--text-muted); font-size: 0.85rem; font-style: italic; }
+        .timeline-date { display: inline-block; padding: 0.15rem 0.5rem; background: rgba(56,189,248,0.06); border-radius: 6px; font-size: 0.72rem; color: var(--accent); font-family: 'JetBrains Mono', monospace; margin-top: 0.6rem; }
+
+        /* CONTACT */
+        .contact-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; }
         .contact-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 2.25rem 1.5rem;
-            text-align: center;
-            text-decoration: none;
-            color: var(--text);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 18px;
+            padding: 2rem 1.2rem; text-align: center; text-decoration: none; color: var(--text);
+            transition: all 0.4s; position: relative; overflow: hidden;
         }
-        .contact-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 3px;
-            background: var(--gradient);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-        .contact-card:hover {
-            transform: translateY(-6px);
-            border-color: var(--accent);
-            background: var(--bg-card-hover);
-            box-shadow: var(--shadow-glow);
-        }
+        .contact-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gradient); opacity: 0; transition: opacity 0.4s; }
+        .contact-card:hover { transform: translateY(-5px); border-color: var(--accent); box-shadow: var(--shadow-glow); }
         .contact-card:hover::before { opacity: 1; }
-        .contact-icon {
-            width: 56px; height: 56px;
-            border-radius: 16px;
-            background: rgba(56, 189, 248, 0.08);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.4rem;
-            margin: 0 auto 1.25rem;
-            transition: all 0.3s ease;
-        }
-        .contact-card:hover .contact-icon {
-            background: rgba(56, 189, 248, 0.15);
-            transform: scale(1.1);
-        }
-        .contact-card h4 { margin-bottom: 0.5rem; font-size: 1.05rem; }
-        .contact-card p { color: var(--text-muted); font-size: 0.85rem; line-height: 1.5; }
-        .footer {
-            text-align: center;
-            padding: 4rem 2rem;
-            border-top: 1px solid var(--border);
-            background: var(--bg-secondary);
-        }
-        .footer p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.5rem; }
-        .footer-sub { font-size: 0.8rem !important; opacity: 0.7; }
-        .footer-social {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        .footer-social a {
-            width: 40px; height: 40px;
-            border-radius: 10px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        .footer-social a:hover {
-            color: var(--accent);
-            border-color: var(--accent);
-            transform: translateY(-3px);
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes spin { from { transform: translate(-50%, -50%) rotate(0deg); } to { transform: translate(-50%, -50%) rotate(360deg); } }
-        @keyframes pulse { 0%, 100% { transform: translate(-50%, -50%) scale(1); } 50% { transform: translate(-50%, -50%) scale(1.08); } }
-        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        @media (max-width: 1100px) {
+        .contact-icon { width: 50px; height: 50px; border-radius: 14px; background: rgba(56,189,248,0.06); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin: 0 auto 1rem; transition: all 0.3s; }
+        .contact-card:hover .contact-icon { background: rgba(56,189,248,0.12); transform: scale(1.1); }
+        .contact-card h4 { margin-bottom: 0.3rem; font-size: 1rem; }
+        .contact-card p { color: var(--text-muted); font-size: 0.8rem; }
+
+        /* FOOTER */
+        .footer { text-align: center; padding: 3rem 2rem; border-top: 1px solid var(--border); background: var(--bg-secondary); }
+        .footer-social { display: flex; justify-content: center; gap: 0.8rem; margin-bottom: 1.2rem; }
+        .footer-social a { width: 38px; height: 38px; border-radius: 10px; background: var(--bg-card); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--text-muted); text-decoration: none; transition: all 0.3s; }
+        .footer-social a:hover { color: var(--accent); border-color: var(--accent); transform: translateY(-3px); }
+        .footer p { color: var(--text-muted); font-size: 0.85rem; }
+
+        /* ANIMATIONS */
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        @keyframes pulse-glow { 0%,100% { opacity: 0.5; } 50% { opacity: 1; } }
+        @keyframes dash { to { stroke-dashoffset: 0; } }
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.4,0,0.2,1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 1024px) {
             .hero { grid-template-columns: 1fr; text-align: center; padding-top: 8rem; }
             .hero-visual { display: none; }
-            .hero-bio { margin: 0 auto 2.5rem; }
+            .hero-bio { margin: 0 auto 2rem; }
             .hero-cta { justify-content: center; }
-            .about-grid { grid-template-columns: 1fr; }
-            .domains-grid { grid-template-columns: 1fr; }
-            .areas-grid { grid-template-columns: 1fr; }
-            .skills-grid { grid-template-columns: 1fr; }
-            .contact-grid { grid-template-columns: repeat(2, 1fr); }
+            .about-grid, .skills-container { grid-template-columns: 1fr; }
+            .domains-grid, .areas-grid, .contact-grid { grid-template-columns: 1fr; }
             .project-features { grid-template-columns: 1fr; }
+            .pipeline-flow { flex-direction: column; }
+            .pipeline-arrow { transform: rotate(90deg); }
+            .pipeline-branches { grid-template-columns: 1fr; }
         }
         @media (max-width: 768px) {
             .navbar { padding: 1rem 1.5rem; }
-            .nav-links { 
-                display: none; 
-                position: absolute;
-                top: 60px; left: 0; right: 0;
-                flex-direction: column;
-                background: rgba(5, 7, 10, 0.98);
-                padding: 1.5rem;
-                gap: 1rem;
-                border-bottom: 1px solid var(--border);
-            }
+            .nav-links { display: none; position: absolute; top: 60px; left: 0; right: 0; flex-direction: column; background: rgba(2,4,8,0.98); padding: 1.5rem; gap: 1rem; border-bottom: 1px solid var(--border); }
             .nav-links.active { display: flex; }
             .nav-toggle { display: block; }
             .hero { padding: 7rem 1.5rem 4rem; }
             section { padding: 4rem 1.5rem; }
-            .hero-title { font-size: 2.8rem; }
-            .section-title { font-size: 2rem; }
-            .contact-grid { grid-template-columns: 1fr; }
-            .hero-meta { justify-content: center; }
+            .hero-title { font-size: 2.6rem; }
+            .section-title { font-size: 1.9rem; }
         }
     </style>
 <base target="_blank">
 </head>
 <body>
 
-    <nav class="navbar" id="navbar">
-        <div class="nav-brand" onclick="window.scrollTo({top:0,behavior:'smooth'})">MB</div>
-        <div class="nav-links" id="navLinks">
-            <a href="#about" class="nav-link">About</a>
-            <a href="#domains" class="nav-link">Domains</a>
-            <a href="#research" class="nav-link">Research</a>
-            <a href="#opensource" class="nav-link">Open Source</a>
-            <a href="#publications" class="nav-link">Publications</a>
-            <a href="#skills" class="nav-link">Skills</a>
-            <a href="#contact" class="nav-link">Contact</a>
-        </div>
-        <button class="nav-toggle" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
-    </nav>
+<nav class="navbar" id="navbar">
+    <div class="nav-brand" onclick="window.scrollTo({top:0,behavior:'smooth'})">MB</div>
+    <div class="nav-links" id="navLinks">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#pipeline" class="nav-link">Pipeline</a>
+        <a href="#domains" class="nav-link">Domains</a>
+        <a href="#research" class="nav-link">Research</a>
+        <a href="#publications" class="nav-link">Publications</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#contact" class="nav-link">Contact</a>
+    </div>
+    <button class="nav-toggle" onclick="toggleMenu()">☰</button>
+</nav>
 
-    <section class="hero" id="about">
-        <div class="hero-bg"></div>
-        <div class="hero-content">
-            <div class="hero-badge">
-                <i class="fas fa-satellite"></i>
-                Signal Processing Researcher & AI Engineer
+<!-- HERO -->
+<section class="hero" id="about">
+    <div class="hero-wave-bg"></div>
+    <div class="hero-content">
+        <div class="hero-badge"><i class="fas fa-satellite"></i> Signal Processing Researcher & AI Engineer</div>
+        <h1 class="hero-title"><span class="gradient-text">Dr. Mostafa BELLA</span></h1>
+        <p class="hero-subtitle">PhD in Signal Processing & Artificial Intelligence</p>
+        <div class="hero-meta">
+            <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Toulouse, France</span>
+            <span class="meta-item"><i class="fas fa-building"></i> IRAP / Université de Toulouse</span>
+            <span class="meta-item"><i class="fas fa-envelope"></i> mbella@irap.omp.eu</span>
+        </div>
+        <p class="hero-bio">
+            I work at the intersection of <strong>signal and image processing</strong>, <strong>artificial intelligence</strong>, <strong>inverse problems</strong>, and <strong>source separation</strong>. My research addresses a fundamental challenge: <em>how can we reliably recover unknown signals from highly noisy, multi-source observations?</em> I develop model-based, data-driven, and hybrid methods for <strong>ESA Euclid</strong> and <strong>LISA</strong>.
+        </p>
+        <div class="hero-cta">
+            <a href="#research" class="btn btn-primary"><i class="fas fa-rocket"></i> Explore Research</a>
+            <a href="https://www.linkedin.com/in/mostafa-bella-9b8b3b1b0/" target="_blank" class="btn btn-outline"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com/mbella821" target="_blank" class="btn btn-ghost"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+    </div>
+    <div class="hero-visual">
+        <!-- Animated Signal Wave SVG -->
+        <svg width="420" height="420" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.9">
+            <defs>
+                <linearGradient id="waveGrad1" x1="0" y1="0" x2="420" y2="420"><stop offset="0%" stop-color="#38bdf8" stop-opacity="0.6"/><stop offset="100%" stop-color="#818cf8" stop-opacity="0.1"/></linearGradient>
+                <linearGradient id="waveGrad2" x1="0" y1="0" x2="420" y2="420"><stop offset="0%" stop-color="#c084fc" stop-opacity="0.4"/><stop offset="100%" stop-color="#f472b6" stop-opacity="0.1"/></linearGradient>
+            </defs>
+            <!-- Orbit rings -->
+            <circle cx="210" cy="210" r="60" stroke="url(#waveGrad1)" stroke-width="1" fill="none" opacity="0.3">
+                <animateTransform attributeName="transform" type="rotate" from="0 210 210" to="360 210 210" dur="12s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="210" cy="210" r="110" stroke="url(#waveGrad2)" stroke-width="1" fill="none" opacity="0.2">
+                <animateTransform attributeName="transform" type="rotate" from="360 210 210" to="0 210 210" dur="18s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="210" cy="210" r="160" stroke="url(#waveGrad1)" stroke-width="0.5" fill="none" opacity="0.15">
+                <animateTransform attributeName="transform" type="rotate" from="0 210 210" to="360 210 210" dur="24s" repeatCount="indefinite"/>
+            </circle>
+            <!-- Signal waves -->
+            <path d="M10,210 Q60,110 110,210 T210,210 T310,210 T410,210" stroke="#38bdf8" stroke-width="2" fill="none" opacity="0.6">
+                <animate attributeName="d" values="M10,210 Q60,110 110,210 T210,210 T310,210 T410,210;M10,210 Q60,310 110,210 T210,210 T310,210 T410,210;M10,210 Q60,110 110,210 T210,210 T310,210 T410,210" dur="4s" repeatCount="indefinite"/>
+            </path>
+            <path d="M10,180 Q60,80 110,180 T210,180 T310,180 T410,180" stroke="#818cf8" stroke-width="1.5" fill="none" opacity="0.4">
+                <animate attributeName="d" values="M10,180 Q60,80 110,180 T210,180 T310,180 T410,180;M10,180 Q60,280 110,180 T210,180 T310,180 T410,180;M10,180 Q60,80 110,180 T210,180 T310,180 T410,180" dur="5s" repeatCount="indefinite"/>
+            </path>
+            <path d="M10,240 Q60,140 110,240 T210,240 T310,240 T410,240" stroke="#c084fc" stroke-width="1.5" fill="none" opacity="0.4">
+                <animate attributeName="d" values="M10,240 Q60,140 110,240 T210,240 T310,240 T410,240;M10,240 Q60,340 110,240 T210,240 T310,240 T410,240;M10,240 Q60,140 110,240 T210,240 T310,240 T410,240" dur="6s" repeatCount="indefinite"/>
+            </path>
+            <!-- Center core -->
+            <circle cx="210" cy="210" r="25" fill="url(#waveGrad1)" opacity="0.9">
+                <animate attributeName="r" values="25;28;25" dur="3s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="210" cy="210" r="8" fill="#fff" opacity="0.9"/>
+            <!-- Satellites -->
+            <g>
+                <circle cx="320" cy="120" r="18" fill="var(--bg-card)" stroke="#38bdf8" stroke-width="1.5"/>
+                <text x="320" y="124" text-anchor="middle" fill="#38bdf8" font-size="10" font-family="JetBrains Mono">GW</text>
+                <animateTransform attributeName="transform" type="rotate" from="0 210 210" to="360 210 210" dur="20s" repeatCount="indefinite"/>
+            </g>
+            <g>
+                <circle cx="120" cy="320" r="18" fill="var(--bg-card)" stroke="#34d399" stroke-width="1.5"/>
+                <text x="120" y="324" text-anchor="middle" fill="#34d399" font-size="10" font-family="JetBrains Mono">BSS</text>
+                <animateTransform attributeName="transform" type="rotate" from="360 210 210" to="0 210 210" dur="25s" repeatCount="indefinite"/>
+            </g>
+            <g>
+                <circle cx="350" cy="280" r="18" fill="var(--bg-card)" stroke="#f472b6" stroke-width="1.5"/>
+                <text x="350" y="284" text-anchor="middle" fill="#f472b6" font-size="10" font-family="JetBrains Mono">ESA</text>
+                <animateTransform attributeName="transform" type="rotate" from="0 210 210" to="360 210 210" dur="30s" repeatCount="indefinite"/>
+            </g>
+        </svg>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section reveal">
+    <div class="section-header">
+        <div class="section-label">About Me</div>
+        <h2 class="section-title">Research Philosophy & Background</h2>
+        <p class="section-desc">Bridging theoretical signal processing with real-world scientific challenges across astrophysics, gravitational waves, and audio.</p>
+    </div>
+    <div class="about-grid">
+        <div class="about-text">
+            <h3>From Signals to Science</h3>
+            <p>My research is driven by a single, powerful question: <strong>how do we extract meaningful information when the data is buried under overwhelming noise and interference?</strong> This challenge appears everywhere — from the faint whispers of gravitational waves detected by space-based interferometers, to the contaminated spectra of distant galaxies, to overlapping voices in a crowded room.</p>
+            <p>I specialize in developing <strong>robust source separation and recovery algorithms</strong> that combine the rigor of model-based signal processing with the representational power of deep learning. My hybrid approaches respect the underlying physics while leveraging data-driven insights to push beyond classical limits.</p>
+            <p>Currently at <strong>IRAP</strong> in Toulouse, France, I contribute to two of ESA's most ambitious space missions — <strong>Euclid</strong> and <strong>LISA</strong> — while maintaining active research in audio and speech processing.</p>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">7+</div>
+                <div class="stat-label">Publications</div>
             </div>
-            <h1 class="hero-title">
-                <span class="gradient-text">Dr. Mostafa BELLA</span>
-            </h1>
-            <p class="hero-subtitle">PhD in Signal Processing & Artificial Intelligence</p>
-            <div class="hero-meta">
-                <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Toulouse, France</span>
-                <span class="meta-item"><i class="fas fa-building"></i> IRAP / Université de Toulouse</span>
-                <span class="meta-item"><i class="fas fa-envelope"></i> mbella@irap.omp.eu</span>
+            <div class="stat-card">
+                <div class="stat-number">2</div>
+                <div class="stat-label">ESA Missions</div>
             </div>
-            <p class="hero-bio">
-                I work at the intersection of <strong>signal and image processing</strong>, <strong>artificial intelligence</strong>, <strong>inverse problems</strong>, and <strong>source separation</strong>. My research addresses a fundamental challenge: <em>how can we reliably recover unknown signals from highly noisy, multi-source observations?</em> I develop model-based, data-driven, and hybrid methods for cutting-edge scientific missions including <strong>ESA Euclid</strong> and <strong>LISA</strong>.
+            <div class="stat-card">
+                <div class="stat-number">3</div>
+                <div class="stat-label">Research Domains</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">5+</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- RESEARCH PIPELINE DIAGRAM -->
+<section class="pipeline-section reveal" id="pipeline">
+    <div class="section-header">
+        <div class="section-label">Methodology</div>
+        <h2 class="section-title">Research Pipeline</h2>
+        <p class="section-desc">A unified framework for recovering unknown signals from noisy, multi-source observations across scientific domains.</p>
+    </div>
+    <div class="pipeline-container">
+        <div class="pipeline-title">Universal Source Separation Workflow</div>
+        <div class="pipeline-flow">
+            <div class="pipeline-step">
+                <div class="step-icon">📡</div>
+                <h4>Raw Observations</h4>
+                <p>Noisy multi-source data</p>
+            </div>
+            <div class="pipeline-arrow"><i class="fas fa-chevron-right"></i></div>
+            <div class="pipeline-step">
+                <div class="step-icon">⚙️</div>
+                <h4>Preprocessing</h4>
+                <p>TF analysis & features</p>
+            </div>
+            <div class="pipeline-arrow"><i class="fas fa-chevron-right"></i></div>
+            <div class="pipeline-step">
+                <div class="step-icon">🧠</div>
+                <h4>Separation Engine</h4>
+                <p>BSS / Deep Learning</p>
+            </div>
+            <div class="pipeline-arrow"><i class="fas fa-chevron-right"></i></div>
+            <div class="pipeline-step">
+                <div class="step-icon">✨</div>
+                <h4>Recovered Signals</h4>
+                <p>Clean individual sources</p>
+            </div>
+        </div>
+        <svg width="100%" height="60" viewBox="0 0 900 60" style="margin-bottom:1.5rem">
+            <defs>
+                <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#38bdf8" opacity="0.5"/>
+                </marker>
+            </defs>
+            <line x1="100" y1="30" x2="800" y2="30" stroke="#38bdf8" stroke-width="1" stroke-dasharray="5,5" opacity="0.3" marker-end="url(#arrowhead)"/>
+            <circle cx="100" cy="30" r="4" fill="#f472b6"/>
+            <circle cx="800" cy="30" r="4" fill="#34d399"/>
+            <text x="100" y="50" text-anchor="middle" fill="#f472b6" font-size="10" font-family="JetBrains Mono">Input Mixture</text>
+            <text x="800" y="50" text-anchor="middle" fill="#34d399" font-size="10" font-family="JetBrains Mono">Output Sources</text>
+        </svg>
+        <div class="pipeline-branches">
+            <div class="branch-card euclid-branch">
+                <h5><i class="fas fa-star" style="color:#f472b6"></i> Euclid</h5>
+                <p>Slitless spectroscopy → PSF-informed deconvolution → Multi-dispersion fusion → Galaxy spectra recovery</p>
+            </div>
+            <div class="branch-card lisa-branch">
+                <h5><i class="fas fa-wave-square" style="color:#38bdf8"></i> LISA</h5>
+                <p>GW data stream → Time-frequency transform → U-Net separation → Individual GW waveforms</p>
+            </div>
+            <div class="branch-card audio-branch">
+                <h5><i class="fas fa-microphone" style="color:#34d399"></i> Audio</h5>
+                <p>Convolutive mixture → TF masking + EM clustering → RTF estimation → Beamforming recombination</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- DOMAINS -->
+<section class="domains-section reveal" id="domains">
+    <div class="section-header">
+        <div class="section-label">Scientific Domains</div>
+        <h2 class="section-title">Where I Apply Signal Processing</h2>
+        <p class="section-desc">A unified framework for source separation and recovery across astrophysics, gravitational-wave astronomy, and audio engineering.</p>
+    </div>
+    <div class="domains-grid">
+        <!-- EUCLID -->
+        <div class="domain-card domain-euclid">
+            <svg class="domain-illustration" viewBox="0 0 300 140" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="euclidGrad" x1="0" y1="0" x2="300" y2="140">
+                        <stop offset="0%" stop-color="#f472b6" stop-opacity="0.3"/>
+                        <stop offset="100%" stop-color="#c084fc" stop-opacity="0.1"/>
+                    </linearGradient>
+                </defs>
+                <!-- Telescope body -->
+                <rect x="120" y="20" width="60" height="40" rx="8" fill="url(#euclidGrad)" stroke="#f472b6" stroke-width="1" opacity="0.6"/>
+                <circle cx="150" cy="40" r="12" fill="none" stroke="#f472b6" stroke-width="1.5" opacity="0.8"/>
+                <circle cx="150" cy="40" r="4" fill="#f472b6" opacity="0.9"/>
+                <!-- Dispersed spectra -->
+                <path d="M160,50 Q180,80 200,110" stroke="#f472b6" stroke-width="1.5" fill="none" opacity="0.5" stroke-dasharray="3,2">
+                    <animate attributeName="stroke-dashoffset" values="0;10" dur="2s" repeatCount="indefinite"/>
+                </path>
+                <path d="M165,50 Q190,75 220,100" stroke="#c084fc" stroke-width="1.5" fill="none" opacity="0.4" stroke-dasharray="3,2">
+                    <animate attributeName="stroke-dashoffset" values="0;10" dur="2.5s" repeatCount="indefinite"/>
+                </path>
+                <path d="M155,50 Q170,85 180,120" stroke="#f472b6" stroke-width="1.5" fill="none" opacity="0.3" stroke-dasharray="3,2">
+                    <animate attributeName="stroke-dashoffset" values="0;10" dur="3s" repeatCount="indefinite"/>
+                </path>
+                <!-- Galaxy dots -->
+                <circle cx="200" cy="110" r="3" fill="#f472b6" opacity="0.8">
+                    <animate attributeName="opacity" values="0.8;0.3;0.8" dur="3s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="220" cy="100" r="2.5" fill="#c084fc" opacity="0.7">
+                    <animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.5s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="180" cy="120" r="2" fill="#f472b6" opacity="0.6">
+                    <animate attributeName="opacity" values="0.6;0.2;0.6" dur="2s" repeatCount="indefinite"/>
+                </circle>
+                <!-- Labels -->
+                <text x="150" y="135" text-anchor="middle" fill="#f472b6" font-size="9" font-family="JetBrains Mono" opacity="0.8">NISP Slitless Spectroscopy</text>
+            </svg>
+            <h3>ESA Euclid Mission</h3>
+            <p>Spectral decontamination and galaxy spectrum extraction from strongly contaminated slitless spectroscopic observations. Physics-informed methods exploiting multiple dispersion directions and PSF.</p>
+            <div class="domain-tags">
+                <span class="tag">Hyperspectral</span>
+                <span class="tag">Deconvolution</span>
+                <span class="tag">PSF Modeling</span>
+                <span class="tag">Multi-Dispersion</span>
+            </div>
+        </div>
+
+        <!-- LISA -->
+        <div class="domain-card domain-lisa">
+            <svg class="domain-illustration" viewBox="0 0 300 140" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="lisaGrad" x1="0" y1="0" x2="300" y2="140">
+                        <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.3"/>
+                        <stop offset="100%" stop-color="#818cf8" stop-opacity="0.1"/>
+                    </linearGradient>
+                </defs>
+                <!-- Triangle constellation -->
+                <polygon points="150,25 70,110 230,110" fill="none" stroke="#38bdf8" stroke-width="1" opacity="0.3" stroke-dasharray="4,3"/>
+                <!-- Satellites -->
+                <circle cx="150" cy="25" r="10" fill="var(--bg-card)" stroke="#38bdf8" stroke-width="1.5"/>
+                <circle cx="150" cy="25" r="3" fill="#38bdf8"/>
+                <circle cx="70" cy="110" r="10" fill="var(--bg-card)" stroke="#38bdf8" stroke-width="1.5"/>
+                <circle cx="70" cy="110" r="3" fill="#38bdf8"/>
+                <circle cx="230" cy="110" r="10" fill="var(--bg-card)" stroke="#38bdf8" stroke-width="1.5"/>
+                <circle cx="230" cy="110" r="3" fill="#38bdf8"/>
+                <!-- GW waves -->
+                <path d="M30,70 Q45,50 60,70 T90,70 T120,70" stroke="#818cf8" stroke-width="1.5" fill="none" opacity="0.6">
+                    <animate attributeName="d" values="M30,70 Q45,50 60,70 T90,70 T120,70;M30,70 Q45,90 60,70 T90,70 T120,70;M30,70 Q45,50 60,70 T90,70 T120,70" dur="3s" repeatCount="indefinite"/>
+                </path>
+                <path d="M180,70 Q195,50 210,70 T240,70 T270,70" stroke="#c084fc" stroke-width="1.5" fill="none" opacity="0.4">
+                    <animate attributeName="d" values="M180,70 Q195,50 210,70 T240,70 T270,70;M180,70 Q195,90 210,70 T240,70 T270,70;M180,70 Q195,50 210,70 T240,70 T270,70" dur="4s" repeatCount="indefinite"/>
+                </path>
+                <!-- Labels -->
+                <text x="150" y="135" text-anchor="middle" fill="#38bdf8" font-size="9" font-family="JetBrains Mono" opacity="0.8">LISA Constellation (2.5M km)</text>
+            </svg>
+            <h3>ESA LISA Mission</h3>
+            <p>Gravitational-wave source separation using deep learning. Detecting and recovering weak GW signals from complex, low-SNR observations through time-frequency analysis.</p>
+            <div class="domain-tags">
+                <span class="tag">Deep Learning</span>
+                <span class="tag">U-Net</span>
+                <span class="tag">GPU Computing</span>
+                <span class="tag">Weak Signal Detection</span>
+            </div>
+        </div>
+
+        <!-- AUDIO -->
+        <div class="domain-card domain-audio">
+            <svg class="domain-illustration" viewBox="0 0 300 140" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="audioGrad" x1="0" y1="0" x2="300" y2="140">
+                        <stop offset="0%" stop-color="#34d399" stop-opacity="0.3"/>
+                        <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.1"/>
+                    </linearGradient>
+                </defs>
+                <!-- Microphones -->
+                <rect x="60" y="50" width="14" height="30" rx="7" fill="none" stroke="#34d399" stroke-width="1.5" opacity="0.7"/>
+                <line x1="67" y1="80" x2="67" y2="95" stroke="#34d399" stroke-width="1.5" opacity="0.5"/>
+                <rect x="110" y="50" width="14" height="30" rx="7" fill="none" stroke="#34d399" stroke-width="1.5" opacity="0.7"/>
+                <line x1="117" y1="80" x2="117" y2="95" stroke="#34d399" stroke-width="1.5" opacity="0.5"/>
+                <rect x="160" y="50" width="14" height="30" rx="7" fill="none" stroke="#34d399" stroke-width="1.5" opacity="0.7"/>
+                <line x1="167" y1="80" x2="167" y2="95" stroke="#34d399" stroke-width="1.5" opacity="0.5"/>
+                <!-- Sound waves -->
+                <path d="M20,65 Q35,45 50,65" stroke="#34d399" stroke-width="1.5" fill="none" opacity="0.5">
+                    <animate attributeName="d" values="M20,65 Q35,45 50,65;M20,65 Q35,85 50,65;M20,65 Q35,45 50,65" dur="2s" repeatCount="indefinite"/>
+                </path>
+                <path d="M190,55 Q205,35 220,55 T250,55" stroke="#38bdf8" stroke-width="1.5" fill="none" opacity="0.4">
+                    <animate attributeName="d" values="M190,55 Q205,35 220,55 T250,55;M190,55 Q205,75 220,55 T250,55;M190,55 Q205,35 220,55 T250,55" dur="2.5s" repeatCount="indefinite"/>
+                </path>
+                <!-- Separated output -->
+                <rect x="230" y="40" width="50" height="50" rx="8" fill="rgba(52,211,153,0.05)" stroke="#34d399" stroke-width="1" opacity="0.6" stroke-dasharray="3,2"/>
+                <text x="255" y="70" text-anchor="middle" fill="#34d399" font-size="8" font-family="JetBrains Mono" opacity="0.8">S₁ S₂ S₃</text>
+                <!-- Labels -->
+                <text x="150" y="135" text-anchor="middle" fill="#34d399" font-size="9" font-family="JetBrains Mono" opacity="0.8">Convolutive Mixture → Separation</text>
+            </svg>
+            <h3>Audio & Speech</h3>
+            <p>Blind source separation of convolutive and underdetermined mixtures. Time-frequency masking with beamforming and RTF-based recombination for robust multi-channel speech separation.</p>
+            <div class="domain-tags">
+                <span class="tag">BSS</span>
+                <span class="tag">Beamforming</span>
+                <span class="tag">RTF Estimation</span>
+                <span class="tag">Underdetermined</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects-section reveal" id="research">
+    <div class="section-header">
+        <div class="section-label">Featured Projects</div>
+        <h2 class="section-title">Research Projects</h2>
+        <p class="section-desc">Deep dives into current and past research, from space missions to audio engineering.</p>
+    </div>
+
+    <!-- LISA Project -->
+    <div class="project-card">
+        <div class="project-header">
+            <div class="project-icon">🌊</div>
+            <div class="project-info">
+                <h3>LISA — Gravitational-Wave Source Separation</h3>
+                <p class="project-subtitle">Deep Learning · Time-Frequency · Weak Signal Detection · Inverse Problems</p>
+            </div>
+        </div>
+        <div class="project-body">
+            <p>The <strong>LISA (Laser Interferometer Space Antenna)</strong> mission will be the first space-based gravitational-wave observatory. The data stream is a complex superposition of multiple GW sources — compact binary inspirals, extreme mass-ratio inspirals, and stochastic backgrounds — all buried under instrumental noise orders of magnitude stronger than the signals.</p>
+
+            <!-- U-Net Architecture Diagram -->
+            <div class="project-section-title">Neural Architecture</div>
+            <svg class="method-diagram" viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="unetGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.3"/>
+                        <stop offset="100%" stop-color="#818cf8" stop-opacity="0.1"/>
+                    </linearGradient>
+                </defs>
+                <!-- Input -->
+                <rect x="20" y="70" width="60" height="60" rx="6" fill="url(#unetGrad)" stroke="#38bdf8" stroke-width="1.5"/>
+                <text x="50" y="105" text-anchor="middle" fill="#38bdf8" font-size="9" font-family="JetBrains Mono">TF Input</text>
+                <!-- Encoder -->
+                <rect x="110" y="60" width="50" height="80" rx="4" fill="rgba(56,189,248,0.1)" stroke="#38bdf8" stroke-width="1"/>
+                <text x="135" y="105" text-anchor="middle" fill="#38bdf8" font-size="8">Enc₁</text>
+                <rect x="180" y="45" width="50" height="110" rx="4" fill="rgba(56,189,248,0.08)" stroke="#38bdf8" stroke-width="1"/>
+                <text x="205" y="105" text-anchor="middle" fill="#38bdf8" font-size="8">Enc₂</text>
+                <rect x="250" y="30" width="50" height="140" rx="4" fill="rgba(56,189,248,0.06)" stroke="#38bdf8" stroke-width="1"/>
+                <text x="275" y="105" text-anchor="middle" fill="#38bdf8" font-size="8">Enc₃</text>
+                <!-- Bottleneck -->
+                <rect x="330" y="60" width="60" height="80" rx="6" fill="rgba(192,132,252,0.15)" stroke="#c084fc" stroke-width="2"/>
+                <text x="360" y="105" text-anchor="middle" fill="#c084fc" font-size="9" font-family="JetBrains Mono">Bottleneck</text>
+                <!-- Decoder -->
+                <rect x="420" y="30" width="50" height="140" rx="4" fill="rgba(129,140,248,0.06)" stroke="#818cf8" stroke-width="1"/>
+                <text x="445" y="105" text-anchor="middle" fill="#818cf8" font-size="8">Dec₃</text>
+                <rect x="490" y="45" width="50" height="110" rx="4" fill="rgba(129,140,248,0.08)" stroke="#818cf8" stroke-width="1"/>
+                <text x="515" y="105" text-anchor="middle" fill="#818cf8" font-size="8">Dec₂</text>
+                <rect x="560" y="60" width="50" height="80" rx="4" fill="rgba(129,140,248,0.1)" stroke="#818cf8" stroke-width="1"/>
+                <text x="585" y="105" text-anchor="middle" fill="#818cf8" font-size="8">Dec₁</text>
+                <!-- Skip connections -->
+                <path d="M160,70 Q200,20 250,30" stroke="#38bdf8" stroke-width="1" fill="none" opacity="0.3" stroke-dasharray="3,2"/>
+                <path d="M230,55 Q260,15 300,30" stroke="#38bdf8" stroke-width="1" fill="none" opacity="0.3" stroke-dasharray="3,2"/>
+                <path d="M300,170 Q340,180 360,140" stroke="#818cf8" stroke-width="1" fill="none" opacity="0.3" stroke-dasharray="3,2"/>
+                <path d="M370,170 Q410,180 430,140" stroke="#818cf8" stroke-width="1" fill="none" opacity="0.3" stroke-dasharray="3,2"/>
+                <!-- Output -->
+                <rect x="640" y="70" width="60" height="60" rx="6" fill="rgba(52,211,153,0.1)" stroke="#34d399" stroke-width="1.5"/>
+                <text x="670" y="105" text-anchor="middle" fill="#34d399" font-size="9" font-family="JetBrains Mono">Masks</text>
+                <!-- Arrows -->
+                <line x1="80" y1="100" x2="110" y2="100" stroke="#38bdf8" stroke-width="1.5" marker-end="url(#arr)"/>
+                <line x1="160" y1="100" x2="180" y2="100" stroke="#38bdf8" stroke-width="1.5" marker-end="url(#arr)"/>
+                <line x1="230" y1="100" x2="250" y2="100" stroke="#38bdf8" stroke-width="1.5" marker-end="url(#arr)"/>
+                <line x1="300" y1="100" x2="330" y2="100" stroke="#38bdf8" stroke-width="1.5" marker-end="url(#arr)"/>
+                <line x1="390" y1="100" x2="420" y2="100" stroke="#818cf8" stroke-width="1.5" marker-end="url(#arr2)"/>
+                <line x1="470" y1="100" x2="490" y2="100" stroke="#818cf8" stroke-width="1.5" marker-end="url(#arr2)"/>
+                <line x1="540" y1="100" x2="560" y2="100" stroke="#818cf8" stroke-width="1.5" marker-end="url(#arr2)"/>
+                <line x1="610" y1="100" x2="640" y2="100" stroke="#34d399" stroke-width="1.5" marker-end="url(#arr3)"/>
+                <defs>
+                    <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#38bdf8"/></marker>
+                    <marker id="arr2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#818cf8"/></marker>
+                    <marker id="arr3" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#34d399"/></marker>
+                </defs>
+                <!-- Legend -->
+                <text x="50" y="165" fill="#5a6a7f" font-size="9" font-family="JetBrains Mono">Encoder ↓</text>
+                <text x="340" y="165" fill="#5a6a7f" font-size="9" font-family="JetBrains Mono">Bottleneck</text>
+                <text x="560" y="165" fill="#5a6a7f" font-size="9" font-family="JetBrains Mono">↑ Decoder</text>
+            </svg>
+
+            <div class="project-section-title">Research Objectives</div>
+            <div class="project-features">
+                <div class="feature"><i class="fas fa-check"></i> Multi-source GW separation</div>
+                <div class="feature"><i class="fas fa-check"></i> Weak-signal detection in noisy env.</div>
+                <div class="feature"><i class="fas fa-check"></i> Time-frequency representation opt.</div>
+                <div class="feature"><i class="fas fa-check"></i> Deep NNs: U-Net, Residual blocks</div>
+                <div class="feature"><i class="fas fa-check"></i> Complex-valued multi-channel signals</div>
+                <div class="feature"><i class="fas fa-check"></i> Physics-aware hybrid approaches</div>
+                <div class="feature"><i class="fas fa-check"></i> Large-scale synthetic datasets</div>
+                <div class="feature"><i class="fas fa-check"></i> GPU-accelerated training</div>
+            </div>
+            <div class="project-section-title">Methodology</div>
+            <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.8; margin-bottom: 1.2rem;">
+                I develop <strong>deep learning architectures</strong> incorporating physical priors about GW propagation and detector response. The approach combines <strong>time-frequency representations</strong> (spectrograms, wavelet transforms) with <strong>U-Net and residual architectures</strong> trained on massive synthetic datasets from realistic waveform models. The key innovation: preserving the physical structure of recovered signals while achieving robust separation at extremely low SNR.
             </p>
-            <div class="hero-cta">
-                <a href="#research" class="btn btn-primary"><i class="fas fa-rocket"></i> Explore My Research</a>
-                <a href="https://www.linkedin.com/in/mostafa-bella-9b8b3b1b0/" target="_blank" class="btn btn-outline"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                <a href="https://github.com/mbella821" target="_blank" class="btn btn-ghost"><i class="fab fa-github"></i> GitHub</a>
+            <div class="project-stack">
+                <span class="stack-item">Python</span><span class="stack-item">TensorFlow/Keras</span><span class="stack-item">NumPy</span>
+                <span class="stack-item">SciPy</span><span class="stack-item">h5py</span><span class="stack-item">CUDA</span>
+                <span class="stack-item">Linux</span><span class="stack-item">Git</span>
             </div>
         </div>
-        <div class="hero-visual">
-            <div class="orbit-system">
-                <div class="orbit orbit-1"></div>
-                <div class="orbit orbit-2"></div>
-                <div class="orbit orbit-3"></div>
-                <div class="orbit orbit-4"></div>
-                <div class="core"><i class="fas fa-satellite"></i></div>
-                <div class="satellite sat-1"><i class="fas fa-wave-square"></i><span class="sat-label">LISA</span></div>
-                <div class="satellite sat-2"><i class="fas fa-microphone"></i><span class="sat-label">AUDIO</span></div>
-                <div class="satellite sat-3"><i class="fas fa-star"></i><span class="sat-label">EUCLID</span></div>
+    </div>
+
+    <!-- Euclid Project -->
+    <div class="project-card">
+        <div class="project-header">
+            <div class="project-icon">🌌</div>
+            <div class="project-info">
+                <h3>Euclid — Spectral Decontamination & Reconstruction</h3>
+                <p class="project-subtitle">Astrophysical Signal Processing · Hyperspectral · Inverse Problems · PSF-Aware</p>
             </div>
         </div>
-    </section>
+        <div class="project-body">
+            <p>The <strong>ESA Euclid mission</strong> maps the geometry of the dark Universe. Its NISP instrument performs slitless spectroscopy: galaxy spectra are dispersed across the detector without physical slits, causing severe spectral contamination where neighboring galaxies' spectra overlap.</p>
 
-    <section class="about-section reveal">
-        <div class="section-header">
-            <div class="section-label">About Me</div>
-            <h2 class="section-title">Research Philosophy & Background</h2>
-            <p class="section-desc">Bridging theoretical signal processing with real-world scientific challenges across astrophysics, gravitational waves, and audio.</p>
-        </div>
-        <div class="about-grid">
-            <div class="about-text">
-                <h3>From Signals to Science</h3>
-                <p>My research is driven by a single, powerful question: <strong>how do we extract meaningful information when the data is buried under overwhelming noise and interference?</strong> This challenge appears everywhere — from the faint whispers of gravitational waves detected by space-based interferometers, to the contaminated spectra of distant galaxies, to overlapping voices in a crowded room.</p>
-                <p>I specialize in developing <strong>robust source separation and recovery algorithms</strong> that combine the rigor of model-based signal processing with the representational power of deep learning. My hybrid approaches are designed to respect the underlying physics of the problem while leveraging data-driven insights to push beyond the limits of classical methods.</p>
-                <p>Currently based at <strong>IRAP (Institut de Recherche en Astrophysique et Planétologie)</strong> in Toulouse, France, I contribute to two of ESA's most ambitious space missions — <strong>Euclid</strong> and <strong>LISA</strong> — while maintaining active research in audio and speech processing.</p>
-            </div>
-            <div class="about-stats">
-                <div class="stat-card">
-                    <div class="stat-number">7+</div>
-                    <div class="stat-label">Publications</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">2</div>
-                    <div class="stat-label">ESA Missions</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">3</div>
-                    <div class="stat-label">Research Domains</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">5+</div>
-                    <div class="stat-label">Years Experience</div>
-                </div>
-            </div>
-        </div>
-    </section>
+            <!-- Spectral Decontamination Diagram -->
+            <div class="project-section-title">Spectral Decontamination Pipeline</div>
+            <svg class="method-diagram" viewBox="0 0 800 160" xmlns="http://www.w3.org/2000/svg">
+                <!-- Input: contaminated spectra -->
+                <rect x="10" y="40" width="100" height="80" rx="8" fill="rgba(244,114,182,0.08)" stroke="#f472b6" stroke-width="1.5"/>
+                <text x="60" y="70" text-anchor="middle" fill="#f472b6" font-size="8" font-family="JetBrains Mono">Contaminated</text>
+                <text x="60" y="85" text-anchor="middle" fill="#f472b6" font-size="8" font-family="JetBrains Mono">Slitless Spectra</text>
+                <text x="60" y="105" text-anchor="middle" fill="#f472b6" font-size="7" opacity="0.7">Multiple sources</text>
+                <!-- Arrow -->
+                <line x1="110" y1="80" x2="160" y2="80" stroke="#f472b6" stroke-width="1.5" marker-end="url(#arrE)"/>
+                <!-- PSF Model -->
+                <rect x="160" y="30" width="100" height="100" rx="8" fill="rgba(192,132,252,0.08)" stroke="#c084fc" stroke-width="1.5"/>
+                <text x="210" y="60" text-anchor="middle" fill="#c084fc" font-size="8" font-family="JetBrains Mono">PSF Model +</text>
+                <text x="210" y="75" text-anchor="middle" fill="#c084fc" font-size="8" font-family="JetBrains Mono">Multi-Dispersion</text>
+                <text x="210" y="90" text-anchor="middle" fill="#c084fc" font-size="8" font-family="JetBrains Mono">Fusion</text>
+                <text x="210" y="110" text-anchor="middle" fill="#c084fc" font-size="7" opacity="0.7">4 directions</text>
+                <!-- Arrow -->
+                <line x1="260" y1="80" x2="310" y2="80" stroke="#c084fc" stroke-width="1.5" marker-end="url(#arrE)"/>
+                <!-- Deconvolution -->
+                <rect x="310" y="35" width="100" height="90" rx="8" fill="rgba(129,140,248,0.08)" stroke="#818cf8" stroke-width="1.5"/>
+                <text x="360" y="65" text-anchor="middle" fill="#818cf8" font-size="8" font-family="JetBrains Mono">Model-Based</text>
+                <text x="360" y="80" text-anchor="middle" fill="#818cf8" font-size="8" font-family="JetBrains Mono">Deconvolution</text>
+                <text x="360" y="100" text-anchor="middle" fill="#818cf8" font-size="7" opacity="0.7">BSS + PSF prior</text>
+                <!-- Arrow -->
+                <line x1="410" y1="80" x2="460" y2="80" stroke="#818cf8" stroke-width="1.5" marker-end="url(#arrE2)"/>
+                <!-- Deep Denoising -->
+                <rect x="460" y="35" width="100" height="90" rx="8" fill="rgba(56,189,248,0.08)" stroke="#38bdf8" stroke-width="1.5"/>
+                <text x="510" y="65" text-anchor="middle" fill="#38bdf8" font-size="8" font-family="JetBrains Mono">Deep NN</text>
+                <text x="510" y="80" text-anchor="middle" fill="#38bdf8" font-size="8" font-family="JetBrains Mono">Denoising</text>
+                <text x="510" y="100" text-anchor="middle" fill="#38bdf8" font-size="7" opacity="0.7">Residual CNN</text>
+                <!-- Arrow -->
+                <line x1="560" y1="80" x2="610" y2="80" stroke="#38bdf8" stroke-width="1.5" marker-end="url(#arrE3)"/>
+                <!-- Output -->
+                <rect x="610" y="40" width="100" height="80" rx="8" fill="rgba(52,211,153,0.08)" stroke="#34d399" stroke-width="1.5"/>
+                <text x="660" y="70" text-anchor="middle" fill="#34d399" font-size="8" font-family="JetBrains Mono">Clean Galaxy</text>
+                <text x="660" y="85" text-anchor="middle" fill="#34d399" font-size="8" font-family="JetBrains Mono">Spectra</text>
+                <text x="660" y="105" text-anchor="middle" fill="#34d399" font-size="7" opacity="0.7">Individual sources</text>
+                <defs>
+                    <marker id="arrE" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#f472b6"/></marker>
+                    <marker id="arrE2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#818cf8"/></marker>
+                    <marker id="arrE3" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#34d399"/></marker>
+                </defs>
+            </svg>
 
-    <section class="domains-section reveal" id="domains">
-        <div class="section-header">
-            <div class="section-label">Scientific Domains</div>
-            <h2 class="section-title">Where I Apply Signal Processing</h2>
-            <p class="section-desc">A unified framework for source separation and recovery across astrophysics, gravitational-wave astronomy, and audio engineering.</p>
-        </div>
-        <div class="domains-grid">
-            <div class="domain-card domain-euclid">
-                <div class="domain-icon">🌌</div>
-                <h3>ESA Euclid Mission</h3>
-                <p>Spectral decontamination and galaxy spectrum extraction from strongly contaminated slitless spectroscopic observations. Developing physics-informed methods that exploit multiple dispersion directions and PSF information.</p>
-                <div class="domain-tags">
-                    <span class="tag">Hyperspectral Imaging</span>
-                    <span class="tag">Deconvolution</span>
-                    <span class="tag">PSF Modeling</span>
-                    <span class="tag">Multi-Dispersion Fusion</span>
-                </div>
+            <div class="project-section-title">Key Contributions</div>
+            <div class="project-features">
+                <div class="feature"><i class="fas fa-check"></i> Multi-source spectral decontamination</div>
+                <div class="feature"><i class="fas fa-check"></i> Linear & convolutive mixture modeling</div>
+                <div class="feature"><i class="fas fa-check"></i> Multi-dispersion-angle data fusion</div>
+                <div class="feature"><i class="fas fa-check"></i> Spectral deconvolution techniques</div>
+                <div class="feature"><i class="fas fa-check"></i> PSF-aware signal processing pipelines</div>
+                <div class="feature"><i class="fas fa-check"></i> Physics-informed reconstruction</div>
+                <div class="feature"><i class="fas fa-check"></i> Validation on real Euclid data</div>
+                <div class="feature"><i class="fas fa-check"></i> Integrated into official pipeline</div>
             </div>
-            <div class="domain-card domain-lisa">
-                <div class="domain-icon">🌊</div>
-                <h3>ESA LISA Mission</h3>
-                <p>Gravitational-wave source separation using deep learning architectures. Detecting and recovering weak GW signals from complex, low-SNR observations through time-frequency analysis and neural networks.</p>
-                <div class="domain-tags">
-                    <span class="tag">Deep Learning</span>
-                    <span class="tag">U-Net</span>
-                    <span class="tag">GPU Computing</span>
-                    <span class="tag">Weak Signal Detection</span>
-                </div>
+            <div class="project-pub">
+                <strong>Key Publication:</strong> Bella, M., et al. (2026). <em>New methods to improve the decontamination of slitless spectra.</em> <strong>Astronomy & Astrophysics</strong>, 706, A180.
             </div>
-            <div class="domain-card domain-audio">
-                <div class="domain-icon">🎙️</div>
-                <h3>Audio & Speech</h3>
-                <p>Blind source separation of convolutive and underdetermined mixtures. Combining time-frequency masking with beamforming and RTF-based recombination for robust multi-channel speech separation.</p>
-                <div class="domain-tags">
-                    <span class="tag">BSS</span>
-                    <span class="tag">Beamforming</span>
-                    <span class="tag">RTF Estimation</span>
-                    <span class="tag">Underdetermined</span>
-                </div>
+            <div class="project-stack">
+                <span class="stack-item">Python</span><span class="stack-item">TensorFlow/Keras</span><span class="stack-item">NumPy</span>
+                <span class="stack-item">SciPy</span><span class="stack-item">MATLAB</span><span class="stack-item">FITS</span>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section class="projects-section reveal" id="research">
-        <div class="section-header">
-            <div class="section-label">Featured Projects</div>
-            <h2 class="section-title">Research Projects</h2>
-            <p class="section-desc">Deep dives into my current and past research, from space missions to audio engineering.</p>
-        </div>
-
-        <div class="project-card">
-            <div class="project-header">
-                <div class="project-icon">🌊</div>
-                <div class="project-info">
-                    <h3>LISA — Gravitational-Wave Source Separation</h3>
-                    <p class="project-subtitle">Deep Learning · Time-Frequency Analysis · Weak Signal Detection · Inverse Problems · GPU Computing</p>
-                </div>
-            </div>
-            <div class="project-body">
-                <p>The <strong>LISA (Laser Interferometer Space Antenna)</strong> mission, led by ESA, will be the first space-based gravitational-wave observatory. The challenge? The data stream is a complex superposition of multiple gravitational-wave sources — compact binary inspirals, extreme mass-ratio inspirals, and stochastic backgrounds — all buried under instrumental noise that is orders of magnitude stronger than the signals themselves.</p>
-
-                <div class="project-section-title">Research Objectives</div>
-                <div class="project-features">
-                    <div class="feature"><i class="fas fa-check"></i> Multi-source gravitational-wave separation</div>
-                    <div class="feature"><i class="fas fa-check"></i> Weak-signal detection in highly noisy environments</div>
-                    <div class="feature"><i class="fas fa-check"></i> Time-frequency representation optimization</div>
-                    <div class="feature"><i class="fas fa-check"></i> Deep neural networks for source separation (U-Net, Residual)</div>
-                    <div class="feature"><i class="fas fa-check"></i> Complex-valued & multi-channel signal representations</div>
-                    <div class="feature"><i class="fas fa-check"></i> Time-frequency mask estimation with physical constraints</div>
-                    <div class="feature"><i class="fas fa-check"></i> Physics-aware hybrid model/data-driven approaches</div>
-                    <div class="feature"><i class="fas fa-check"></i> Large-scale synthetic dataset generation</div>
-                </div>
-
-                <div class="project-section-title">Methodology</div>
-                <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1.5rem;">
-                    I develop <strong>deep learning architectures</strong> specifically designed for gravitational-wave data. Unlike generic neural networks, my models incorporate physical priors about gravitational-wave propagation and detector response. The approach combines <strong>time-frequency representations</strong> (spectrograms, wavelet transforms) with <strong>U-Net and residual architectures</strong> trained on massive synthetic datasets generated from realistic waveform models. The key innovation lies in preserving the physical structure of recovered signals while achieving robust separation even at extremely low signal-to-noise ratios.
-                </p>
-
-                <div class="project-section-title">Technical Stack</div>
-                <div class="project-stack">
-                    <span class="stack-item">Python</span>
-                    <span class="stack-item">TensorFlow/Keras</span>
-                    <span class="stack-item">NumPy</span>
-                    <span class="stack-item">SciPy</span>
-                    <span class="stack-item">h5py</span>
-                    <span class="stack-item">CUDA</span>
-                    <span class="stack-item">Linux</span>
-                    <span class="stack-item">Git</span>
-                </div>
+    <!-- BSS Project -->
+    <div class="project-card">
+        <div class="project-header">
+            <div class="project-icon">🎙️</div>
+            <div class="project-info">
+                <h3>Convolutive Blind Source Separation</h3>
+                <p class="project-subtitle">BSS · Audio · Speech · Underdetermined Mixtures · RTF-Based Recombination</p>
             </div>
         </div>
+        <div class="project-body">
+            <p>Real-world acoustic environments produce <strong>convolutive mixtures</strong> where each source is filtered by the room's impulse response. When there are <em>fewer microphones than sources</em> (underdetermined case), classical methods fail. My research relaxes strict sparsity assumptions.</p>
 
-        <div class="project-card">
-            <div class="project-header">
-                <div class="project-icon">🌌</div>
-                <div class="project-info">
-                    <h3>Euclid — Spectral Decontamination & Reconstruction</h3>
-                    <p class="project-subtitle">Astrophysical Signal Processing · Hyperspectral Data · Inverse Problems · Denoising · PSF-Aware Methods</p>
-                </div>
+            <!-- BSS Pipeline Diagram -->
+            <div class="project-section-title">Three-Stage Separation Pipeline</div>
+            <svg class="method-diagram" viewBox="0 0 800 180" xmlns="http://www.w3.org/2000/svg">
+                <!-- Stage 1 -->
+                <rect x="10" y="20" width="170" height="140" rx="10" fill="rgba(56,189,248,0.04)" stroke="#38bdf8" stroke-width="1" stroke-dasharray="4,2"/>
+                <text x="95" y="45" text-anchor="middle" fill="#38bdf8" font-size="10" font-weight="600" font-family="JetBrains Mono">STAGE 1</text>
+                <rect x="30" y="55" width="130" height="30" rx="5" fill="rgba(56,189,248,0.1)" stroke="#38bdf8" stroke-width="1"/>
+                <text x="95" y="75" text-anchor="middle" fill="#38bdf8" font-size="8" font-family="JetBrains Mono">STFT Analysis</text>
+                <rect x="30" y="95" width="130" height="30" rx="5" fill="rgba(56,189,248,0.1)" stroke="#38bdf8" stroke-width="1"/>
+                <text x="95" y="115" text-anchor="middle" fill="#38bdf8" font-size="8" font-family="JetBrains Mono">Complex Cosine Features</text>
+                <text x="95" y="150" text-anchor="middle" fill="#5a6a7f" font-size="8" font-family="JetBrains Mono">TF Representation</text>
+                <!-- Arrow -->
+                <line x1="180" y1="90" x2="220" y2="90" stroke="#38bdf8" stroke-width="1.5" marker-end="url(#arrB1)"/>
+                <!-- Stage 2 -->
+                <rect x="220" y="20" width="170" height="140" rx="10" fill="rgba(192,132,252,0.04)" stroke="#c084fc" stroke-width="1" stroke-dasharray="4,2"/>
+                <text x="305" y="45" text-anchor="middle" fill="#c084fc" font-size="10" font-weight="600" font-family="JetBrains Mono">STAGE 2</text>
+                <rect x="240" y="55" width="130" height="30" rx="5" fill="rgba(192,132,252,0.1)" stroke="#c084fc" stroke-width="1"/>
+                <text x="305" y="75" text-anchor="middle" fill="#c084fc" font-size="8" font-family="JetBrains Mono">EM Clustering</text>
+                <rect x="240" y="95" width="130" height="30" rx="5" fill="rgba(192,132,252,0.1)" stroke="#c084fc" stroke-width="1"/>
+                <text x="305" y="115" text-anchor="middle" fill="#c084fc" font-size="8" font-family="JetBrains Mono">TF Mask Estimation</text>
+                <text x="305" y="150" text-anchor="middle" fill="#5a6a7f" font-size="8" font-family="JetBrains Mono">Per-Frequency Bin</text>
+                <!-- Arrow -->
+                <line x1="390" y1="90" x2="430" y2="90" stroke="#c084fc" stroke-width="1.5" marker-end="url(#arrB2)"/>
+                <!-- Stage 3 -->
+                <rect x="430" y="20" width="170" height="140" rx="10" fill="rgba(129,140,248,0.04)" stroke="#818cf8" stroke-width="1" stroke-dasharray="4,2"/>
+                <text x="515" y="45" text-anchor="middle" fill="#818cf8" font-size="10" font-weight="600" font-family="JetBrains Mono">STAGE 3</text>
+                <rect x="450" y="55" width="130" height="30" rx="5" fill="rgba(129,140,248,0.1)" stroke="#818cf8" stroke-width="1"/>
+                <text x="515" y="75" text-anchor="middle" fill="#818cf8" font-size="8" font-family="JetBrains Mono">Blind RTF Estimation</text>
+                <rect x="450" y="95" width="130" height="30" rx="5" fill="rgba(129,140,248,0.1)" stroke="#818cf8" stroke-width="1"/>
+                <text x="515" y="115" text-anchor="middle" fill="#818cf8" font-size="8" font-family="JetBrains Mono">Beamforming Recomb.</text>
+                <text x="515" y="150" text-anchor="middle" fill="#5a6a7f" font-size="8" font-family="JetBrains Mono">Spatial Image Recovery</text>
+                <!-- Arrow -->
+                <line x1="600" y1="90" x2="640" y2="90" stroke="#818cf8" stroke-width="1.5" marker-end="url(#arrB3)"/>
+                <!-- Output -->
+                <rect x="640" y="40" width="130" height="100" rx="10" fill="rgba(52,211,153,0.06)" stroke="#34d399" stroke-width="1.5"/>
+                <text x="705" y="70" text-anchor="middle" fill="#34d399" font-size="9" font-weight="600" font-family="JetBrains Mono">SEPARATED</text>
+                <text x="705" y="90" text-anchor="middle" fill="#34d399" font-size="9" font-weight="600" font-family="JetBrains Mono">SOURCES</text>
+                <text x="705" y="115" text-anchor="middle" fill="#34d399" font-size="8" opacity="0.7">S₁(t), S₂(t), ...</text>
+                <defs>
+                    <marker id="arrB1" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#38bdf8"/></marker>
+                    <marker id="arrB2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#c084fc"/></marker>
+                    <marker id="arrB3" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#818cf8"/></marker>
+                </defs>
+            </svg>
+
+            <div class="project-section-title">Developed Approaches</div>
+            <div class="project-features">
+                <div class="feature"><i class="fas fa-check"></i> Relaxed sparsity TF masking</div>
+                <div class="feature"><i class="fas fa-check"></i> Bayesian estimation frameworks</div>
+                <div class="feature"><i class="fas fa-check"></i> Blind RTF estimation</div>
+                <div class="feature"><i class="fas fa-check"></i> RTF-based recombination</div>
+                <div class="feature"><i class="fas fa-check"></i> Beamforming integration</div>
+                <div class="feature"><i class="fas fa-check"></i> EM clustering optimization</div>
             </div>
-            <div class="project-body">
-                <p>The <strong>ESA Euclid mission</strong> aims to map the geometry of the dark Universe. Its Near-Infrared Spectrometer and Photometer (NISP) performs slitless spectroscopy, which means galaxy spectra are dispersed across the detector without physical slits. The result? Severe spectral contamination where the spectra of neighboring galaxies overlap, making individual spectrum extraction extremely challenging.</p>
-
-                <div class="project-section-title">Key Contributions</div>
-                <div class="project-features">
-                    <div class="feature"><i class="fas fa-check"></i> Multi-source spectral decontamination algorithms</div>
-                    <div class="feature"><i class="fas fa-check"></i> Linear and convolutive mixture modeling</div>
-                    <div class="feature"><i class="fas fa-check"></i> Multi-dispersion-angle data fusion</div>
-                    <div class="feature"><i class="fas fa-check"></i> Spectral deconvolution techniques</div>
-                    <div class="feature"><i class="fas fa-check"></i> PSF-aware signal processing pipelines</div>
-                    <div class="feature"><i class="fas fa-check"></i> Weak-signal recovery under heavy contamination</div>
-                    <div class="feature"><i class="fas fa-check"></i> Physics-informed reconstruction methods</div>
-                    <div class="feature"><i class="fas fa-check"></i> Validation on real Euclid mission data</div>
-                </div>
-
-                <div class="project-section-title">Methodology</div>
-                <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1.5rem;">
-                    My approach treats spectral decontamination as a <strong>blind source separation problem</strong> where the mixing process is governed by the instrument's point-spread function (PSF) and dispersion properties. I developed methods that exploit <strong>multiple dispersion directions</strong> simultaneously, using photometric measurements as auxiliary information. The algorithms combine model-based deconvolution with <strong>deep neural networks for denoising</strong>, achieving significantly improved spectrum reconstruction compared to classical methods. These methods have been integrated into the official Euclid scientific processing pipeline.
-                </p>
-
-                <div class="project-pub">
-                    <strong>Key Publication:</strong> Bella, M., et al. (2026). <em>New methods to improve the decontamination of slitless spectra.</em> <strong>Astronomy & Astrophysics</strong>, 706, A180. <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> DOI</a>
-                </div>
-
-                <div class="project-section-title">Technical Stack</div>
-                <div class="project-stack">
-                    <span class="stack-item">Python</span>
-                    <span class="stack-item">TensorFlow/Keras</span>
-                    <span class="stack-item">NumPy</span>
-                    <span class="stack-item">SciPy</span>
-                    <span class="stack-item">MATLAB</span>
-                    <span class="stack-item">Hyperspectral Imaging</span>
-                    <span class="stack-item">h5py</span>
-                    <span class="stack-item">FITS</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="project-card">
-            <div class="project-header">
-                <div class="project-icon">🎙️</div>
-                <div class="project-info">
-                    <h3>Convolutive Blind Source Separation</h3>
-                    <p class="project-subtitle">Blind Source Separation · Audio · Speech · Time-Frequency Processing · Underdetermined Mixtures</p>
-                </div>
-            </div>
-            <div class="project-body">
-                <p>Real-world acoustic environments produce <strong>convolutive mixtures</strong> where each source signal is filtered by the room's impulse response before reaching the microphones. When there are <em>fewer microphones than sources</em> (the underdetermined case), classical methods fail. My research addresses this fundamental limitation by developing novel approaches that relax the strict sparsity assumptions of traditional methods.</p>
-
-                <div class="project-section-title">Developed Approaches</div>
-                <div class="project-features">
-                    <div class="feature"><i class="fas fa-check"></i> Time-frequency masking with relaxed sparsity models</div>
-                    <div class="feature"><i class="fas fa-check"></i> Bayesian estimation frameworks</div>
-                    <div class="feature"><i class="fas fa-check"></i> Blind Relative Transfer Function (RTF) estimation</div>
-                    <div class="feature"><i class="fas fa-check"></i> RTF-based source recombination</div>
-                    <div class="feature"><i class="fas fa-check"></i> Beamforming integration</div>
-                    <div class="feature"><i class="fas fa-check"></i> Time-frequency clustering optimization</div>
-                </div>
-
-                <div class="project-section-title">Methodology</div>
-                <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1.5rem;">
-                    The method operates in three stages: (1) <strong>probabilistic time-frequency mask estimation</strong> using complex cosine similarity and EM clustering per frequency bin; (2) <strong>blind RTF estimation</strong> from the most reliable single-source TF bins; and (3) a novel <strong>RTF-based recombination strategy</strong> that reconstructs source spatial images while reducing the artifacts caused by classical binary masking. This approach achieves state-of-the-art separation quality for underdetermined convolutive mixtures of speech signals.
-                </p>
-
-                <div class="project-pub">
-                    <strong>Key Publication:</strong> Bella, M., Saylani, H., & Hosseini, S. (2026). <em>Underdetermined Convolutive Blind Source Separation of Speech Signals Using Relaxed Time–Frequency Sparsity and RTF‑Based Recombination.</em> <strong>Computer Speech & Language</strong>, 101, 101992. <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> DOI</a>
-                </div>
-
-                <div class="project-links">
-                    <a href="https://github.com/mbella821/Convolutive-BSS-Speech-Separation" target="_blank" class="btn btn-small btn-primary">
-                        <i class="fab fa-github"></i> View on GitHub
-                    </a>
-                    <a href="#" target="_blank" class="btn btn-small btn-outline">
-                        <i class="fas fa-file-pdf"></i> Read Paper
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="opensource-section reveal" id="opensource">
-        <div class="section-header">
-            <div class="section-label">Open Source</div>
-            <h2 class="section-title">Code & Implementations</h2>
-            <p class="section-desc">Reproducible research implementations with documentation and sample data.</p>
-        </div>
-        <div class="repo-card">
-            <div class="repo-header">
-                <div class="repo-name">
-                    <i class="fab fa-github"></i>
-                    Convolutive-BSS-Speech-Separation
-                </div>
-                <span class="repo-lang">MATLAB</span>
-            </div>
-            <p class="repo-desc">
-                MATLAB implementation of the method proposed in <em>"Underdetermined Convolutive Blind Source Separation of Speech Signals Using Relaxed Time–Frequency Sparsity and RTF‑Based Recombination"</em> (Computer Speech & Language, 2026). This repository provides a clean, modular, and unified implementation that handles <strong>both determined and underdetermined</strong> convolutive mixtures of speech signals.
-            </p>
-            <div class="repo-structure">
-                <span class="dir">BSS_RTF_Recombination/</span><br>
-                &nbsp;&nbsp;├── <span class="file">main.m</span> <span class="comment">% Main script — entry point</span><br>
-                &nbsp;&nbsp;├── <span class="dir">src/</span><br>
-                &nbsp;&nbsp;│   ├── <span class="file">compute_stft.m</span> <span class="comment">% STFT analysis</span><br>
-                &nbsp;&nbsp;│   ├── <span class="file">compute_istft.m</span> <span class="comment">% ISTFT synthesis</span><br>
-                &nbsp;&nbsp;│   ├── <span class="file">extract_complex_cosine_features.m</span> <span class="comment">% Feature extraction</span><br>
-                &nbsp;&nbsp;│   ├── <span class="file">cluster_em_frequency_bins.m</span> <span class="comment">% Bin-wise EM clustering</span><br>
-                &nbsp;&nbsp;│   ├── <span class="file">estimate_rtf.m</span> <span class="comment">% Blind RTF estimation</span><br>
-                &nbsp;&nbsp;│   ├── <span class="file">reconstruct_sources.m</span> <span class="comment">% RTF-based recombination</span><br>
-                &nbsp;&nbsp;│   └── <span class="file">evaluate_separation.m</span> <span class="comment">% BSS evaluation wrapper</span><br>
-                &nbsp;&nbsp;└── <span class="dir">utils/</span> <span class="comment">% EM helper functions</span>
-            </div>
-            <div class="project-section-title">Key Parameters</div>
-            <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.25rem;">
-                Configurable via the <code style="background: var(--bg-elevated); padding: 0.15rem 0.4rem; border-radius: 4px; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem;">params</code> structure: window size (2048), FFT size (2048), overlap (512), number of sources/microphones, EM iterations (max 100), convergence tolerance (1e-7), and RTF selection threshold (0.95).
-            </p>
-            <div class="repo-meta">
-                <span class="repo-meta-item"><i class="fas fa-code-branch"></i> MATLAB R2016b+</span>
-                <span class="repo-meta-item"><i class="fas fa-cube"></i> Signal Processing Toolbox</span>
-                <span class="repo-meta-item"><i class="fas fa-balance-scale"></i> Academic License</span>
+            <div class="project-pub">
+                <strong>Key Publication:</strong> Bella, M., Saylani, H., & Hosseini, S. (2026). <em>Underdetermined Convolutive Blind Source Separation of Speech Signals Using Relaxed Time–Frequency Sparsity and RTF‑Based Recombination.</em> <strong>Computer Speech & Language</strong>, 101, 101992.
             </div>
             <div class="project-links">
-                <a href="https://github.com/mbella821/Convolutive-BSS-Speech-Separation" target="_blank" class="btn btn-small btn-primary">
-                    <i class="fab fa-github"></i> View Repository
-                </a>
-                <a href="#" target="_blank" class="btn btn-small btn-outline">
-                    <i class="fas fa-download"></i> Download
-                </a>
+                <a href="https://github.com/mbella821/Convolutive-BSS-Speech-Separation" target="_blank" class="btn btn-small btn-primary"><i class="fab fa-github"></i> View on GitHub</a>
+                <a href="#" target="_blank" class="btn btn-small btn-outline"><i class="fas fa-file-pdf"></i> Read Paper</a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="areas-section reveal" id="areas">
-        <div class="section-header">
-            <div class="section-label">Expertise</div>
-            <h2 class="section-title">Core Research Areas</h2>
-            <p class="section-desc">The theoretical and methodological foundations that underpin all my research projects.</p>
+<!-- OPEN SOURCE -->
+<section class="opensource-section reveal" id="opensource">
+    <div class="section-header">
+        <div class="section-label">Open Source</div>
+        <h2 class="section-title">Code & Implementations</h2>
+        <p class="section-desc">Reproducible research with documentation and sample data.</p>
+    </div>
+    <div class="repo-card">
+        <div class="repo-header">
+            <div class="repo-name"><i class="fab fa-github"></i> Convolutive-BSS-Speech-Separation</div>
+            <span class="repo-lang">MATLAB</span>
         </div>
-        <div class="areas-grid">
-            <div class="area-group">
-                <h4><i class="fas fa-signal"></i> Signal Processing</h4>
-                <div class="area-tags">
-                    <span class="area-tag">Blind Source Separation</span>
-                    <span class="area-tag">Inverse Problems</span>
-                    <span class="area-tag">Weak Signal Detection</span>
-                    <span class="area-tag">Time-Frequency Analysis</span>
-                    <span class="area-tag">Beamforming</span>
-                    <span class="area-tag">Denoising</span>
-                    <span class="area-tag">Deconvolution</span>
-                    <span class="area-tag">Spectral Estimation</span>
-                </div>
-            </div>
-            <div class="area-group">
-                <h4><i class="fas fa-brain"></i> Artificial Intelligence</h4>
-                <div class="area-tags">
-                    <span class="area-tag">Deep Learning</span>
-                    <span class="area-tag">CNN</span>
-                    <span class="area-tag">U-Net</span>
-                    <span class="area-tag">Residual Networks</span>
-                    <span class="area-tag">Physics-Informed ML</span>
-                    <span class="area-tag">Scientific ML</span>
-                    <span class="area-tag">Hybrid Model/Data-Driven</span>
-                </div>
-            </div>
-            <div class="area-group">
-                <h4><i class="fas fa-globe"></i> Scientific Domains</h4>
-                <div class="area-tags">
-                    <span class="area-tag">Astrophysics</span>
-                    <span class="area-tag">Gravitational Waves</span>
-                    <span class="area-tag">Hyperspectral Imaging</span>
-                    <span class="area-tag">Audio Processing</span>
-                    <span class="area-tag">Speech Processing</span>
-                    <span class="area-tag">Image Processing</span>
-                </div>
-            </div>
+        <p class="repo-desc">MATLAB implementation of the method from <em>Computer Speech & Language, 2026</em>. Clean, modular, handles <strong>both determined and underdetermined</strong> convolutive mixtures.</p>
+        <div class="repo-structure">
+<span class="dir">BSS_RTF_Recombination/</span><br>
+&nbsp;&nbsp;├── <span class="file">main.m</span> <span class="comment">% Entry point</span><br>
+&nbsp;&nbsp;├── <span class="dir">src/</span><br>
+&nbsp;&nbsp;│   ├── <span class="file">compute_stft.m</span> <span class="comment">% STFT analysis</span><br>
+&nbsp;&nbsp;│   ├── <span class="file">compute_istft.m</span> <span class="comment">% ISTFT synthesis</span><br>
+&nbsp;&nbsp;│   ├── <span class="file">extract_complex_cosine_features.m</span> <span class="comment">% Features</span><br>
+&nbsp;&nbsp;│   ├── <span class="file">cluster_em_frequency_bins.m</span> <span class="comment">% EM clustering</span><br>
+&nbsp;&nbsp;│   ├── <span class="file">estimate_rtf.m</span> <span class="comment">% Blind RTF estimation</span><br>
+&nbsp;&nbsp;│   ├── <span class="file">reconstruct_sources.m</span> <span class="comment">% Recombination</span><br>
+&nbsp;&nbsp;│   └── <span class="file">evaluate_separation.m</span> <span class="comment">% Evaluation</span><br>
+&nbsp;&nbsp;└── <span class="dir">utils/</span> <span class="comment">% EM helpers</span>
         </div>
-    </section>
+        <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1rem;">Configurable via <code style="background: var(--bg-elevated); padding: 0.1rem 0.3rem; border-radius: 4px; font-family: 'JetBrains Mono'; font-size: 0.75rem;">params</code>: window=2048, FFT=2048, overlap=512, EM max=100, tol=1e-7, RTF thresh=0.95.</p>
+        <div class="project-links">
+            <a href="https://github.com/mbella821/Convolutive-BSS-Speech-Separation" target="_blank" class="btn btn-small btn-primary"><i class="fab fa-github"></i> View Repository</a>
+            <a href="#" target="_blank" class="btn btn-small btn-outline"><i class="fas fa-download"></i> Download</a>
+        </div>
+    </div>
+</section>
 
-    <section class="publications-section reveal" id="publications">
-        <div class="section-header">
-            <div class="section-label">Publications</div>
-            <h2 class="section-title">Selected Publications</h2>
-            <p class="section-desc">Peer-reviewed journal articles and conference proceedings spanning astrophysics, signal processing, and machine learning.</p>
+<!-- RESEARCH AREAS -->
+<section class="areas-section reveal" id="areas">
+    <div class="section-header">
+        <div class="section-label">Expertise</div>
+        <h2 class="section-title">Core Research Areas</h2>
+        <p class="section-desc">Theoretical and methodological foundations underpinning all research projects.</p>
+    </div>
+    <div class="areas-grid">
+        <div class="area-group">
+            <h4><i class="fas fa-signal"></i> Signal Processing</h4>
+            <div class="area-tags">
+                <span class="area-tag">Blind Source Separation</span>
+                <span class="area-tag">Inverse Problems</span>
+                <span class="area-tag">Weak Signal Detection</span>
+                <span class="area-tag">Time-Frequency Analysis</span>
+                <span class="area-tag">Beamforming</span>
+                <span class="area-tag">Denoising</span>
+                <span class="area-tag">Deconvolution</span>
+                <span class="area-tag">Spectral Estimation</span>
+            </div>
         </div>
+        <div class="area-group">
+            <h4><i class="fas fa-brain"></i> Artificial Intelligence</h4>
+            <div class="area-tags">
+                <span class="area-tag">Deep Learning</span>
+                <span class="area-tag">CNN</span>
+                <span class="area-tag">U-Net</span>
+                <span class="area-tag">Residual Networks</span>
+                <span class="area-tag">Physics-Informed ML</span>
+                <span class="area-tag">Scientific ML</span>
+                <span class="area-tag">Hybrid Approaches</span>
+            </div>
+        </div>
+        <div class="area-group">
+            <h4><i class="fas fa-globe"></i> Scientific Domains</h4>
+            <div class="area-tags">
+                <span class="area-tag">Astrophysics</span>
+                <span class="area-tag">Gravitational Waves</span>
+                <span class="area-tag">Hyperspectral Imaging</span>
+                <span class="area-tag">Audio Processing</span>
+                <span class="area-tag">Speech Processing</span>
+                <span class="area-tag">Image Processing</span>
+            </div>
+        </div>
+    </div>
+</section>
 
-        <div class="pub-category">
-            <div class="pub-category-header">
-                <h3><i class="fas fa-book-open"></i> Journal Articles</h3>
-                <span class="pub-count">3</span>
+<!-- PUBLICATIONS -->
+<section class="publications-section reveal" id="publications">
+    <div class="section-header">
+        <div class="section-label">Publications</div>
+        <h2 class="section-title">Selected Publications</h2>
+        <p class="section-desc">Peer-reviewed journal articles and conference proceedings.</p>
+    </div>
+    <div class="pub-category">
+        <div class="pub-category-header"><h3><i class="fas fa-book-open"></i> Journal Articles</h3><span class="pub-count">3</span></div>
+        <div class="pub-list">
+            <div class="pub-item">
+                <div class="pub-year">2026</div>
+                <div class="pub-content">
+                    <strong>New methods to improve the decontamination of slitless spectra</strong>
+                    <div class="pub-journal">Astronomy & Astrophysics, 706, A180</div>
+                    <div class="pub-authors">Bella, M., et al.</div>
+                    <div class="pub-links"><a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a><a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a><a href="#" class="pub-link"><i class="fas fa-quote-right"></i> Cite</a></div>
+                </div>
             </div>
-            <div class="pub-list">
-                <div class="pub-item">
-                    <div class="pub-year">2026</div>
-                    <div class="pub-content">
-                        <strong>New methods to improve the decontamination of slitless spectra</strong>
-                        <div class="pub-journal">Astronomy & Astrophysics, 706, A180</div>
-                        <div class="pub-authors">Bella, M., et al.</div>
-                        <div class="pub-links">
-                            <a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a>
-                            <a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a>
-                            <a href="#" class="pub-link"><i class="fas fa-quote-right"></i> Cite</a>
-                        </div>
-                    </div>
+            <div class="pub-item">
+                <div class="pub-year">2026</div>
+                <div class="pub-content">
+                    <strong>Underdetermined Convolutive Blind Source Separation of Speech Signals Using Relaxed Time–Frequency Sparsity and RTF‑Based Recombination</strong>
+                    <div class="pub-journal">Computer Speech & Language, 101, 101992</div>
+                    <div class="pub-authors">Bella, M., Saylani, H., & Hosseini, S.</div>
+                    <div class="pub-links"><a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a><a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a><a href="#" class="pub-link"><i class="fas fa-code"></i> Code</a></div>
                 </div>
-                <div class="pub-item">
-                    <div class="pub-year">2026</div>
-                    <div class="pub-content">
-                        <strong>Underdetermined Convolutive Blind Source Separation of Speech Signals Using Relaxed Time–Frequency Sparsity and RTF‑Based Recombination</strong>
-                        <div class="pub-journal">Computer Speech & Language, 101, 101992</div>
-                        <div class="pub-authors">Bella, M., Saylani, H., & Hosseini, S.</div>
-                        <div class="pub-links">
-                            <a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a>
-                            <a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a>
-                            <a href="#" class="pub-link"><i class="fas fa-code"></i> Code</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="pub-item">
-                    <div class="pub-year">2023</div>
-                    <div class="pub-content">
-                        <strong>Multi-Channel Bin-Wise Speech Separation Combining Time-Frequency Masking and Beamforming</strong>
-                        <div class="pub-journal">IEEE Access, 11, 100632–100645</div>
-                        <div class="pub-authors">Bella, M., et al.</div>
-                        <div class="pub-links">
-                            <a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a>
-                            <a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a>
-                        </div>
-                    </div>
+            </div>
+            <div class="pub-item">
+                <div class="pub-year">2023</div>
+                <div class="pub-content">
+                    <strong>Multi-Channel Bin-Wise Speech Separation Combining Time-Frequency Masking and Beamforming</strong>
+                    <div class="pub-journal">IEEE Access, 11, 100632–100645</div>
+                    <div class="pub-authors">Bella, M., et al.</div>
+                    <div class="pub-links"><a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a><a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a></div>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="pub-category">
+        <div class="pub-category-header"><h3><i class="fas fa-microphone"></i> Conference Papers</h3><span class="pub-count">4</span></div>
+        <div class="pub-list">
+            <div class="pub-item">
+                <div class="pub-year">2024</div>
+                <div class="pub-content">
+                    <strong>Fourier domain approach for galaxy spectra decontamination and deconvolution</strong>
+                    <div class="pub-journal">ICASSP 2024 — IEEE International Conference on Acoustics, Speech and Signal Processing</div>
+                    <div class="pub-links"><a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a></div>
+                </div>
+            </div>
+            <div class="pub-item">
+                <div class="pub-year">2022</div>
+                <div class="pub-content">
+                    <strong>Bin-wise combination of time-frequency masking and beamforming for convolutive source separation</strong>
+                    <div class="pub-journal">MMSP 2022 — IEEE Workshop on Multimedia Signal Processing</div>
+                    <div class="pub-links"><a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a></div>
+                </div>
+            </div>
+            <div class="pub-item">
+                <div class="pub-year">2022</div>
+                <div class="pub-content">
+                    <strong>Decontamination of galaxy spectra using four dispersion directions</strong>
+                    <div class="pub-journal">EUSIPCO 2022 — European Signal Processing Conference</div>
+                    <div class="pub-links"><a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a></div>
+                </div>
+            </div>
+            <div class="pub-item">
+                <div class="pub-year">2020</div>
+                <div class="pub-content">
+                    <strong>A New Sparse BSS Method for Determined Convolutive Mixtures</strong>
+                    <div class="pub-journal">LNCS / Springer — Lecture Notes in Computer Science</div>
+                    <div class="pub-links"><a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-        <div class="pub-category">
-            <div class="pub-category-header">
-                <h3><i class="fas fa-microphone"></i> Conference Papers</h3>
-                <span class="pub-count">4</span>
-            </div>
-            <div class="pub-list">
-                <div class="pub-item">
-                    <div class="pub-year">2024</div>
-                    <div class="pub-content">
-                        <strong>Fourier domain approach for galaxy spectra decontamination and deconvolution</strong>
-                        <div class="pub-journal">ICASSP 2024 — IEEE International Conference on Acoustics, Speech and Signal Processing</div>
-                        <div class="pub-links">
-                            <a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="pub-item">
-                    <div class="pub-year">2022</div>
-                    <div class="pub-content">
-                        <strong>Bin-wise combination of time-frequency masking and beamforming for convolutive source separation</strong>
-                        <div class="pub-journal">MMSP 2022 — IEEE Workshop on Multimedia Signal Processing</div>
-                        <div class="pub-links">
-                            <a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="pub-item">
-                    <div class="pub-year">2022</div>
-                    <div class="pub-content">
-                        <strong>Decontamination of galaxy spectra using four dispersion directions</strong>
-                        <div class="pub-journal">EUSIPCO 2022 — European Signal Processing Conference</div>
-                        <div class="pub-links">
-                            <a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="pub-item">
-                    <div class="pub-year">2020</div>
-                    <div class="pub-content">
-                        <strong>A New Sparse BSS Method for Determined Convolutive Mixtures</strong>
-                        <div class="pub-journal">LNCS / Springer — Lecture Notes in Computer Science</div>
-                        <div class="pub-links">
-                            <a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a>
-                        </div>
-                    </div>
-                </div>
+<!-- SKILLS -->
+<section class="skills-section reveal" id="skills">
+    <div class="section-header">
+        <div class="section-label">Technologies</div>
+        <h2 class="section-title">Skills & Tools</h2>
+        <p class="section-desc">Programming languages, frameworks, and tools for robust signal processing and ML systems.</p>
+    </div>
+    <div class="skills-container">
+        <div class="skill-category">
+            <h4><i class="fas fa-code"></i> Programming</h4>
+            <div class="skill-bars">
+                <div class="skill-bar"><span class="skill-name">Python</span><div class="skill-track"><div class="skill-level" style="width:95%"></div></div></div>
+                <div class="skill-bar"><span class="skill-name">MATLAB</span><div class="skill-track"><div class="skill-level" style="width:90%"></div></div></div>
+                <div class="skill-bar"><span class="skill-name">C / C++</span><div class="skill-track"><div class="skill-level" style="width:70%"></div></div></div>
+                <div class="skill-bar"><span class="skill-name">Fortran</span><div class="skill-track"><div class="skill-level" style="width:60%"></div></div></div>
             </div>
         </div>
-    </section>
+        <div class="skill-category">
+            <h4><i class="fas fa-brain"></i> Machine Learning</h4>
+            <div class="skill-bars">
+                <div class="skill-bar"><span class="skill-name">TensorFlow / Keras</span><div class="skill-track"><div class="skill-level" style="width:95%"></div></div></div>
+                <div class="skill-bar"><span class="skill-name">PyTorch</span><div class="skill-track"><div class="skill-level" style="width:80%"></div></div></div>
+                <div class="skill-bar"><span class="skill-name">scikit-learn</span><div class="skill-track"><div class="skill-level" style="width:85%"></div></div></div>
+            </div>
+        </div>
+        <div class="skill-category">
+            <h4><i class="fas fa-calculator"></i> Scientific Computing</h4>
+            <div class="skill-bars">
+                <div class="skill-bar"><span class="skill-name">NumPy / SciPy</span><div class="skill-track"><div class="skill-level" style="width:95%"></div></div></div>
+                <div class="skill-bar"><span class="skill-name">pandas</span><div class="skill-track"><div class="skill-level" style="width:85%"></div></div></div>
+                <div class="skill-bar"><span class="skill-name">Matplotlib</span><div class="skill-track"><div class="skill-level" style="width:90%"></div></div></div>
+                <div class="skill-bar"><span class="skill-name">Jupyter</span><div class="skill-track"><div class="skill-level" style="width:90%"></div></div></div>
+            </div>
+        </div>
+        <div class="skill-category">
+            <h4><i class="fas fa-cogs"></i> Engineering</h4>
+            <div class="skill-bars">
+                <div class="skill-bar"><span class="skill-name">Linux</span><div class="skill-track"><div class="skill-level" style="width:90%"></div></div></div>
+                <div class="skill-bar"><span class="skill-name">Git / GitHub</span><div class="skill-track"><div class="skill-level" style="width:90%"></div></div></div>
+                <div class="skill-bar"><span class="skill-name">CUDA / GPU</span><div class="skill-track"><div class="skill-level" style="width:85%"></div></div></div>
+                <div class="skill-bar"><span class="skill-name">LaTeX</span><div class="skill-track"><div class="skill-level" style="width:95%"></div></div></div>
+            </div>
+        </div>
+    </div>
 
-    <section class="skills-section reveal" id="skills">
-        <div class="section-header">
-            <div class="section-label">Technologies</div>
-            <h2 class="section-title">Skills & Tools</h2>
-            <p class="section-desc">The programming languages, frameworks, and tools I use to build robust signal processing and machine learning systems.</p>
-        </div>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h4><i class="fas fa-code"></i> Programming</h4>
-                <div class="skill-bars">
-                    <div class="skill-bar">
-                        <div class="skill-info">
-                            <span class="skill-name">Python</span>
-                            <span class="skill-percent">95%</span>
-                        </div>
-                        <div class="skill-track"><div class="skill-level" style="width:95%"></div></div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-info">
-                            <span class="skill-name">MATLAB</span>
-                            <span class="skill-percent">90%</span>
-                        </div>
-                        <div class="skill-track"><div class="skill-level" style="width:90%"></div></div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-info">
-                            <span class="skill-name">C / C++</span>
-                            <span class="skill-percent">70%</span>
-                        </div>
-                        <div class="skill-track"><div class="skill-level" style="width:70%"></div></div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-info">
-                            <span class="skill-name">Fortran</span>
-                            <span class="skill-percent">60%</span>
-                        </div>
-                        <div class="skill-track"><div class="skill-level" style="width:60%"></div></div>
-                    </div>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h4><i class="fas fa-brain"></i> Machine Learning</h4>
-                <div class="skill-bars">
-                    <div class="skill-bar">
-                        <div class="skill-info">
-                            <span class="skill-name">TensorFlow / Keras</span>
-                            <span class="skill-percent">95%</span>
-                        </div>
-                        <div class="skill-track"><div class="skill-level" style="width:95%"></div></div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-info">
-                            <span class="skill-name">PyTorch</span>
-                            <span class="skill-percent">80%</span>
-                        </div>
-                        <div class="skill-track"><div class="skill-level" style="width:80%"></div></div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-info">
-                            <span class="skill-name">scikit-learn</span>
-                            <span class="skill-percent">85%</span>
-                        </div>
-                        <div class="skill-track"><div class="skill-level" style="width:85%"></div></div>
-                    </div>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h4><i class="fas fa-calculator"></i> Scientific Computing</h4>
-                <div class="skill-bars">
-                    <div class="skill-bar">
-                        <div class="skill-info">
-                            <span class="skill-name">NumPy / SciPy</span>
-                            <span class="skill-percent">95%</span>
-                        </div>
-                        <div class="skill-track"><div class="skill-level" style="width:95%"></div></div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-info">
-                            <span class="skill-name">pandas</span>
-                            <span class="skill-percent">85%</span>
-                        </div>
-                        <div class="skill-track"><div class="skill-level" style="width:85%"></div></div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-info">
-                            <span class="skill-name">Matplotlib</span>
-                            <span class="skill-percent">90%</span>
-                        </div>
-                        <div class="skill-track"><div class="skill-level" style="width:90%"></div></div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-info">
-                            <span class="skill-name">Jupyter</span>
-                            <span class="skill-percent">90%</span>
-                        </div>
-                        <div class="skill-track"><div class="skill-level" style="width:90%"></div></div>
-                    </div>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h4><i class="fas fa-cogs"></i> Engineering</h4>
-                <div class="skill-bars">
-                    <div class="skill-bar">
-                        <div class="skill-info">
-                            <span class="skill-name">Linux</span>
-                            <span class="skill-percent">90%</span>
-                        </div>
-                        <div class="skill-track"><div class="skill-level" style="width:90%"></div></div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-info">
-                            <span class="skill-name">Git / GitHub</span>
-                            <span class="skill-percent">90%</span>
-                        </div>
-                        <div class="skill-track"><div class="skill-level" style="width:90%"></div></div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-info">
-                            <span class="skill-name">CUDA / GPU</span>
-                            <span class="skill-percent">85%</span>
-                        </div>
-                        <div class="skill-track"><div class="skill-level" style="width:85%"></div></div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-info">
-                            <span class="skill-name">LaTeX</span>
-                            <span class="skill-percent">95%</span>
-                        </div>
-                        <div class="skill-track"><div class="skill-level" style="width:95%"></div></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Radar Chart -->
+    <div style="margin-top: 3rem; text-align: center;">
+        <div class="section-label" style="margin-bottom: 1.5rem;">Competency Radar</div>
+        <svg width="360" height="300" viewBox="0 0 360 300" style="max-width: 100%;">
+            <defs>
+                <radialGradient id="radarFill" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2"/>
+                    <stop offset="100%" stop-color="#818cf8" stop-opacity="0.05"/>
+                </radialGradient>
+            </defs>
+            <!-- Background grid -->
+            <polygon points="180,30 310,105 310,225 180,300 50,225 50,105" fill="none" stroke="rgba(56,189,248,0.1)" stroke-width="1"/>
+            <polygon points="180,60 265,110 265,210 180,260 95,210 95,110" fill="none" stroke="rgba(56,189,248,0.1)" stroke-width="1"/>
+            <polygon points="180,90 220,115 220,185 180,210 140,185 140,115" fill="none" stroke="rgba(56,189,248,0.1)" stroke-width="1"/>
+            <!-- Axis lines -->
+            <line x1="180" y1="30" x2="180" y2="300" stroke="rgba(56,189,248,0.15)" stroke-width="1"/>
+            <line x1="50" y1="105" x2="310" y2="105" stroke="rgba(56,189,248,0.15)" stroke-width="1"/>
+            <line x1="50" y1="225" x2="310" y2="225" stroke="rgba(56,189,248,0.15)" stroke-width="1"/>
+            <!-- Data polygon -->
+            <polygon points="180,45 290,115 280,205 180,275 80,215 70,115" fill="url(#radarFill)" stroke="#38bdf8" stroke-width="2" opacity="0.8"/>
+            <!-- Data points -->
+            <circle cx="180" cy="45" r="4" fill="#38bdf8"/><circle cx="290" cy="115" r="4" fill="#38bdf8"/>
+            <circle cx="280" cy="205" r="4" fill="#38bdf8"/><circle cx="180" cy="275" r="4" fill="#38bdf8"/>
+            <circle cx="80" cy="215" r="4" fill="#38bdf8"/><circle cx="70" cy="115" r="4" fill="#38bdf8"/>
+            <!-- Labels -->
+            <text x="180" y="20" text-anchor="middle" fill="#38bdf8" font-size="10" font-weight="600">Signal Proc.</text>
+            <text x="330" y="105" text-anchor="start" fill="#818cf8" font-size="10" font-weight="600">Deep Learning</text>
+            <text x="330" y="235" text-anchor="start" fill="#c084fc" font-size="10" font-weight="600">Astrophysics</text>
+            <text x="180" y="320" text-anchor="middle" fill="#34d399" font-size="10" font-weight="600">Audio Proc.</text>
+            <text x="30" y="235" text-anchor="end" fill="#f472b6" font-size="10" font-weight="600">GPU/CUDA</text>
+            <text x="30" y="105" text-anchor="end" fill="#38bdf8" font-size="10" font-weight="600">Sci. Writing</text>
+        </svg>
+    </div>
+</section>
 
-    <section class="education-section reveal" id="education">
-        <div class="section-header">
-            <div class="section-label">Education</div>
-            <h2 class="section-title">Academic Background</h2>
-            <p class="section-desc">My educational journey from Morocco to France, building expertise in signal processing and artificial intelligence.</p>
-        </div>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-marker">🎓</div>
-                <div class="timeline-content">
-                    <h4>PhD — Signal Processing & Artificial Intelligence</h4>
-                    <p class="timeline-place"><i class="fas fa-university"></i> Université de Toulouse, France</p>
-                    <p class="timeline-thesis">Thesis: <em>Blind Source Separation in Convolutive Mixtures: Applications to Astrophysical and Audio Signals</em></p>
-                    <span class="timeline-date">2019 — 2023</span>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-marker">📚</div>
-                <div class="timeline-content">
-                    <h4>MSc — Electronics, Systems & Telecommunications</h4>
-                    <p class="timeline-place"><i class="fas fa-university"></i> Ibn Zohr University, Agadir, Morocco</p>
-                    <p class="timeline-thesis">Specialization in signal processing, communication systems, and digital electronics.</p>
-                    <span class="timeline-date">2016 — 2018</span>
-                </div>
+<!-- EDUCATION -->
+<section class="education-section reveal" id="education">
+    <div class="section-header">
+        <div class="section-label">Education</div>
+        <h2 class="section-title">Academic Background</h2>
+        <p class="section-desc">From Morocco to France, building expertise in signal processing and AI.</p>
+    </div>
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-marker">🎓</div>
+            <div class="timeline-content">
+                <h4>PhD — Signal Processing & Artificial Intelligence</h4>
+                <p class="timeline-place"><i class="fas fa-university"></i> Université de Toulouse, France</p>
+                <p class="timeline-thesis">Thesis: <em>Blind Source Separation in Convolutive Mixtures: Applications to Astrophysical and Audio Signals</em></p>
+                <span class="timeline-date">2019 — 2023</span>
             </div>
         </div>
-    </section>
-
-    <section class="contact-section reveal" id="contact">
-        <div class="section-header">
-            <div class="section-label">Get in Touch</div>
-            <h2 class="section-title">Contact</h2>
-            <p class="section-desc">Interested in collaboration, research opportunities, or just want to discuss signal processing? Reach out.</p>
-        </div>
-        <div class="contact-grid">
-            <a href="mailto:mbella@irap.omp.eu" class="contact-card">
-                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                <h4>Email</h4>
-                <p>mbella@irap.omp.eu</p>
-            </a>
-            <a href="https://www.linkedin.com/in/mostafa-bella-9b8b3b1b0/" target="_blank" class="contact-card">
-                <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
-                <h4>LinkedIn</h4>
-                <p>Professional Profile</p>
-            </a>
-            <a href="https://github.com/mbella821" target="_blank" class="contact-card">
-                <div class="contact-icon"><i class="fab fa-github"></i></div>
-                <h4>GitHub</h4>
-                <p>Code & Projects</p>
-            </a>
-            <div class="contact-card">
-                <div class="contact-icon"><i class="fas fa-building"></i></div>
-                <h4>IRAP</h4>
-                <p>Institut de Recherche en Astrophysique et Planétologie</p>
+        <div class="timeline-item">
+            <div class="timeline-marker">📚</div>
+            <div class="timeline-content">
+                <h4>MSc — Electronics, Systems & Telecommunications</h4>
+                <p class="timeline-place"><i class="fas fa-university"></i> Ibn Zohr University, Agadir, Morocco</p>
+                <p class="timeline-thesis">Specialization in signal processing, communication systems, and digital electronics.</p>
+                <span class="timeline-date">2016 — 2018</span>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <footer class="footer">
-        <div class="footer-social">
-            <a href="mailto:mbella@irap.omp.eu" aria-label="Email"><i class="fas fa-envelope"></i></a>
-            <a href="https://www.linkedin.com/in/mostafa-bella-9b8b3b1b0/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/mbella821" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+<!-- CONTACT -->
+<section class="contact-section reveal" id="contact">
+    <div class="section-header">
+        <div class="section-label">Get in Touch</div>
+        <h2 class="section-title">Contact</h2>
+        <p class="section-desc">Interested in collaboration or research opportunities? Reach out.</p>
+    </div>
+    <div class="contact-grid">
+        <a href="mailto:mbella@irap.omp.eu" class="contact-card">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <h4>Email</h4>
+            <p>mbella@irap.omp.eu</p>
+        </a>
+        <a href="https://www.linkedin.com/in/mostafa-bella-9b8b3b1b0/" target="_blank" class="contact-card">
+            <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
+            <h4>LinkedIn</h4>
+            <p>Professional Profile</p>
+        </a>
+        <a href="https://github.com/mbella821" target="_blank" class="contact-card">
+            <div class="contact-icon"><i class="fab fa-github"></i></div>
+            <h4>GitHub</h4>
+            <p>Code & Projects</p>
+        </a>
+        <div class="contact-card">
+            <div class="contact-icon"><i class="fas fa-building"></i></div>
+            <h4>IRAP</h4>
+            <p>Institut de Recherche en Astrophysique et Planétologie</p>
         </div>
-        <p>© 2026 Dr. Mostafa BELLA — Signal Processing Researcher</p>
-        <p class="footer-sub">IRAP / Université de Toulouse — Toulouse, France</p>
-    </footer>
+    </div>
+</section>
 
-    <script>
-        // Mobile menu toggle
-        function toggleMenu() {
-            const links = document.getElementById('navLinks');
-            links.classList.toggle('active');
-        }
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-social">
+        <a href="mailto:mbella@irap.omp.eu" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/mostafa-bella-9b8b3b1b0/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/mbella821" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    </div>
+    <p>© 2026 Dr. Mostafa BELLA — Signal Processing Researcher</p>
+    <p class="footer-sub">IRAP / Université de Toulouse — Toulouse, France</p>
+</footer>
 
-        // Close mobile menu on link click
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('navLinks').classList.remove('active');
-            });
-        });
+<script>
+    // Mobile menu
+    function toggleMenu() {
+        document.getElementById('navLinks').classList.toggle('active');
+    }
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => document.getElementById('navLinks').classList.remove('active'));
+    });
 
-        // Navbar scroll effect
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+        const navbar = document.getElementById('navbar');
+        navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Scroll reveal
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // Animate skill bars
+    const skillObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const bar = entry.target;
+                const w = bar.style.width;
+                bar.style.width = '0%';
+                setTimeout(() => bar.style.width = w, 100);
             }
         });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.skill-level').forEach(bar => skillObserver.observe(bar));
+</script>
 
-        // Scroll reveal animation
-        const revealElements = document.querySelectorAll('.reveal');
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-        revealElements.forEach(el => revealObserver.observe(el));
-
-        // Animate skill bars on scroll
-        const skillBars = document.querySelectorAll('.skill-level');
-        const skillObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const bar = entry.target;
-                    const width = bar.style.width;
-                    bar.style.width = '0%';
-                    setTimeout(() => { bar.style.width = width; }, 100);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        skillBars.forEach(bar => skillObserver.observe(bar));
-    </script>
 </body>
 </html>
