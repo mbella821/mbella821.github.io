@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Dr. Mostafa BELLA - Signal Processing Researcher & Research Engineer. PhD in Signal Processing & AI. ESA Euclid & LISA missions.">
-    <title>Dr. Mostafa BELLA — Signal Processing Researcher</title>
+    <title>Dr. Mostafa BELLA  -  Signal Processing Researcher</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
@@ -270,27 +270,45 @@
         .pub-link { font-size: 0.78rem; color: var(--accent); text-decoration: none; }
         .pub-link:hover { color: var(--accent2); }
 
-        /* SKILLS RADAR */
-        .skills-container { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
-        .skill-category { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 1.8rem; }
-        .skill-category h4 { font-size: 1rem; margin-bottom: 1.2rem; color: var(--accent3); display: flex; align-items: center; gap: 0.5rem; }
-        .skill-bars { display: flex; flex-direction: column; gap: 0.9rem; }
-        .skill-bar { display: flex; align-items: center; gap: 0.8rem; }
-        .skill-name { min-width: 130px; font-size: 0.85rem; color: var(--text-secondary); }
-        .skill-track { flex: 1; height: 6px; background: var(--bg-elevated); border-radius: 3px; overflow: hidden; }
-        .skill-level { height: 100%; border-radius: 3px; background: var(--gradient); }
-        .radar-container { display: flex; justify-content: center; align-items: center; }
 
-        /* TIMELINE */
-        .timeline { position: relative; padding-left: 2.5rem; }
-        .timeline::before { content: ''; position: absolute; left: 0.5rem; top: 0; bottom: 0; width: 2px; background: var(--gradient); border-radius: 2px; }
-        .timeline-item { position: relative; margin-bottom: 2rem; padding-left: 1.8rem; }
-        .timeline-marker { position: absolute; left: -2.3rem; top: 0.2rem; width: 30px; height: 30px; background: var(--bg-card); border: 2px solid var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; }
-        .timeline-content { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; }
-        .timeline-content h4 { font-size: 1.05rem; margin-bottom: 0.3rem; }
-        .timeline-place { color: var(--accent); font-size: 0.85rem; margin-bottom: 0.5rem; }
-        .timeline-thesis { color: var(--text-muted); font-size: 0.85rem; font-style: italic; }
-        .timeline-date { display: inline-block; padding: 0.15rem 0.5rem; background: rgba(56,189,248,0.06); border-radius: 6px; font-size: 0.72rem; color: var(--accent); font-family: 'JetBrains Mono', monospace; margin-top: 0.6rem; }
+        .publication-summary {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+        .publication-stat {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 16px; padding: 1.2rem; text-align: center;
+        }
+        .publication-stat .number {
+            display: block; font-size: 1.7rem; font-weight: 800;
+            background: var(--gradient); -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .publication-stat .label {
+            display: block; margin-top: 0.25rem; color: var(--text-muted);
+            font-size: 0.75rem; line-height: 1.4;
+        }
+        .publication-profiles {
+            display: flex; justify-content: center; flex-wrap: wrap; gap: 0.7rem;
+            margin-top: 2rem;
+        }
+        .profile-link {
+            display: inline-flex; align-items: center; gap: 0.45rem;
+            padding: 0.55rem 0.9rem; border: 1px solid var(--border);
+            border-radius: 10px; background: var(--bg-card);
+            color: var(--text-secondary); text-decoration: none;
+            font-size: 0.8rem; transition: all 0.3s;
+        }
+        .profile-link:hover {
+            color: var(--accent); border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+        @media (max-width: 1024px) {
+            .publication-summary { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .publication-summary { grid-template-columns: 1fr 1fr; }
+        }
 
         /* CONTACT */
         .contact-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; }
@@ -357,7 +375,6 @@
         <a href="#domains" class="nav-link">Domains</a>
         <a href="#research" class="nav-link">Research</a>
         <a href="#publications" class="nav-link">Publications</a>
-        <a href="#skills" class="nav-link">Skills</a>
         <a href="#contact" class="nav-link">Contact</a>
     </div>
     <button class="nav-toggle" onclick="toggleMenu()">☰</button>
@@ -380,7 +397,7 @@
         </p>
         <div class="hero-cta">
             <a href="#research" class="btn btn-primary"><i class="fas fa-rocket"></i> Explore Research</a>
-            <a href="https://www.linkedin.com/in/mostafa-bella-9b8b3b1b0/" target="_blank" class="btn btn-outline"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://www.linkedin.com/in/mostafa-bella-2667a6197/" target="_blank" class="btn btn-outline"><i class="fab fa-linkedin"></i> LinkedIn</a>
             <a href="https://github.com/mbella821" target="_blank" class="btn btn-ghost"><i class="fab fa-github"></i> GitHub</a>
         </div>
     </div>
@@ -446,13 +463,13 @@
     <div class="about-grid">
         <div class="about-text">
             <h3>From Signals to Science</h3>
-            <p>My research is driven by a single, powerful question: <strong>how do we extract meaningful information when the data is buried under overwhelming noise and interference?</strong> This challenge appears everywhere — from the faint whispers of gravitational waves detected by space-based interferometers, to the contaminated spectra of distant galaxies, to overlapping voices in a crowded room.</p>
+            <p>My research is driven by a single, powerful question: <strong>how do we extract meaningful information when the data is buried under overwhelming noise and interference?</strong> This challenge appears everywhere  -  from the faint whispers of gravitational waves detected by space-based interferometers, to the contaminated spectra of distant galaxies, to overlapping voices in a crowded room.</p>
             <p>I specialize in developing <strong>robust source separation and recovery algorithms</strong> that combine the rigor of model-based signal processing with the representational power of deep learning. My hybrid approaches respect the underlying physics while leveraging data-driven insights to push beyond classical limits.</p>
-            <p>Currently at <strong>IRAP</strong> in Toulouse, France, I contribute to two of ESA's most ambitious space missions — <strong>Euclid</strong> and <strong>LISA</strong> — while maintaining active research in audio and speech processing.</p>
+            <p>Currently at <strong>IRAP</strong> in Toulouse, France, I contribute to two of ESA's most ambitious space missions  -  <strong>Euclid</strong> and <strong>LISA</strong>  -  while maintaining active research in audio and speech processing.</p>
         </div>
         <div class="stats-grid">
             <div class="stat-card">
-                <div class="stat-number">7+</div>
+                <div class="stat-number">13</div>
                 <div class="stat-label">Publications</div>
             </div>
             <div class="stat-card">
@@ -680,12 +697,12 @@
         <div class="project-header">
             <div class="project-icon">🌊</div>
             <div class="project-info">
-                <h3>LISA — Gravitational-Wave Source Separation</h3>
+                <h3>LISA  -  Gravitational-Wave Source Separation</h3>
                 <p class="project-subtitle">Deep Learning · Time-Frequency · Weak Signal Detection · Inverse Problems</p>
             </div>
         </div>
         <div class="project-body">
-            <p>The <strong>LISA (Laser Interferometer Space Antenna)</strong> mission will be the first space-based gravitational-wave observatory. The data stream is a complex superposition of multiple GW sources — compact binary inspirals, extreme mass-ratio inspirals, and stochastic backgrounds — all buried under instrumental noise orders of magnitude stronger than the signals.</p>
+            <p>The <strong>LISA (Laser Interferometer Space Antenna)</strong> mission will be the first space-based gravitational-wave observatory. The data stream is a complex superposition of multiple GW sources  -  compact binary inspirals, extreme mass-ratio inspirals, and stochastic backgrounds  -  all buried under instrumental noise orders of magnitude stronger than the signals.</p>
 
             <!-- U-Net Architecture Diagram -->
             <div class="project-section-title">Neural Architecture</div>
@@ -772,7 +789,7 @@
         <div class="project-header">
             <div class="project-icon">🌌</div>
             <div class="project-info">
-                <h3>Euclid — Spectral Decontamination & Reconstruction</h3>
+                <h3>Euclid  -  Spectral Decontamination & Reconstruction</h3>
                 <p class="project-subtitle">Astrophysical Signal Processing · Hyperspectral · Inverse Problems · PSF-Aware</p>
             </div>
         </div>
@@ -1006,185 +1023,235 @@
 <section class="publications-section reveal" id="publications">
     <div class="section-header">
         <div class="section-label">Publications</div>
-        <h2 class="section-title">Selected Publications</h2>
-        <p class="section-desc">Peer-reviewed journal articles and conference proceedings.</p>
+        <h2 class="section-title">Research Publications</h2>
+        <p class="section-desc">Peer-reviewed journal articles and conference proceedings across astrophysics, signal processing, audio, and source separation.</p>
     </div>
+
+    <div class="publication-summary">
+        <div class="publication-stat">
+            <span class="number">7</span>
+            <span class="label">International peer-reviewed journal articles</span>
+        </div>
+        <div class="publication-stat">
+            <span class="number">3</span>
+            <span class="label">First-author journal articles</span>
+        </div>
+        <div class="publication-stat">
+            <span class="number">4</span>
+            <span class="label">International conference papers</span>
+        </div>
+        <div class="publication-stat">
+            <span class="number">2</span>
+            <span class="label">National conference papers</span>
+        </div>
+    </div>
+
     <div class="pub-category">
-        <div class="pub-category-header"><h3><i class="fas fa-book-open"></i> Journal Articles</h3><span class="pub-count">3</span></div>
+        <div class="pub-category-header">
+            <h3><i class="fas fa-book-open"></i> Journal Articles - First Author</h3>
+            <span class="pub-count">3</span>
+        </div>
         <div class="pub-list">
+
             <div class="pub-item">
                 <div class="pub-year">2026</div>
                 <div class="pub-content">
                     <strong>New methods to improve the decontamination of slitless spectra</strong>
-                    <div class="pub-journal">Astronomy & Astrophysics, 706, A180</div>
-                    <div class="pub-authors">Bella, M., et al.</div>
-                    <div class="pub-links"><a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a><a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a><a href="#" class="pub-link"><i class="fas fa-quote-right"></i> Cite</a></div>
+                    <div class="pub-journal">Astronomy &amp; Astrophysics, 706, A180 (Q1, IF: 6.1)</div>
+                    <div class="pub-authors"><strong>Bella, M.</strong>, Hosseini, S., Contini, T., &amp; Saylani, H.</div>
+                    <div class="pub-links">
+                        <a href="https://doi.org/10.1051/0004-6361/202557144" target="_blank" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a>
+                    </div>
                 </div>
             </div>
+
             <div class="pub-item">
                 <div class="pub-year">2026</div>
                 <div class="pub-content">
-                    <strong>Underdetermined Convolutive Blind Source Separation of Speech Signals Using Relaxed Time–Frequency Sparsity and RTF‑Based Recombination</strong>
-                    <div class="pub-journal">Computer Speech & Language, 101, 101992</div>
-                    <div class="pub-authors">Bella, M., Saylani, H., & Hosseini, S.</div>
-                    <div class="pub-links"><a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a><a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a><a href="#" class="pub-link"><i class="fas fa-code"></i> Code</a></div>
+                    <strong>Underdetermined Convolutive Blind Source Separation of Speech Signals Using Relaxed Time-Frequency Sparsity and RTF-Based Recombination</strong>
+                    <div class="pub-journal">Computer Speech &amp; Language, 101, 101992 (Q2, IF: 3.4)</div>
+                    <div class="pub-authors"><strong>Bella, M.</strong>, Saylani, H., &amp; Hosseini, S.</div>
+                    <div class="pub-links">
+                        <a href="https://doi.org/10.1016/j.csl.2026.101992" target="_blank" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a>
+                        <a href="https://github.com/mbella821/Convolutive-BSS-Speech-Separation" target="_blank" class="pub-link"><i class="fab fa-github"></i> Code</a>
+                    </div>
                 </div>
             </div>
+
             <div class="pub-item">
                 <div class="pub-year">2023</div>
                 <div class="pub-content">
                     <strong>Multi-Channel Bin-Wise Speech Separation Combining Time-Frequency Masking and Beamforming</strong>
-                    <div class="pub-journal">IEEE Access, 11, 100632–100645</div>
-                    <div class="pub-authors">Bella, M., et al.</div>
-                    <div class="pub-links"><a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a><a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a></div>
+                    <div class="pub-journal">IEEE Access, 11, 100632-100645 (Q1, IF: 3.9)</div>
+                    <div class="pub-authors"><strong>Bella, M.</strong>, Saylani, H., Hosseini, S., &amp; Deville, Y.</div>
+                    <div class="pub-links">
+                        <a href="https://doi.org/10.1109/ACCESS.2023.3315596" target="_blank" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a>
+                    </div>
                 </div>
             </div>
+
         </div>
     </div>
+
     <div class="pub-category">
-        <div class="pub-category-header"><h3><i class="fas fa-microphone"></i> Conference Papers</h3><span class="pub-count">4</span></div>
+        <div class="pub-category-header">
+            <h3><i class="fas fa-users"></i> Journal Articles - Co-author</h3>
+            <span class="pub-count">4</span>
+        </div>
         <div class="pub-list">
+
+            <div class="pub-item">
+                <div class="pub-year">2025</div>
+                <div class="pub-content">
+                    <strong>Euclid Quick Data Release: From spectrograms to spectra: the SIR spectroscopic Processing Function</strong>
+                    <div class="pub-journal">Astronomy &amp; Astrophysics (Q1, IF: 6.1)</div>
+                    <div class="pub-authors">Copin, Y., et al. (including <strong>Bella, M.</strong>)</div>
+                    <div class="pub-links">
+                        <a href="https://doi.org/10.1051/0004-6361/202554627" target="_blank" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-year">2025</div>
+                <div class="pub-content">
+                    <strong>Euclid Quick Data Release: Characteristics and limitations of the spectroscopic measurements</strong>
+                    <div class="pub-journal">Astronomy &amp; Astrophysics (Q1, IF: 6.1)</div>
+                    <div class="pub-authors">Le Brun, V., et al. (including <strong>Bella, M.</strong>)</div>
+                    <div class="pub-links">
+                        <a href="https://doi.org/10.1051/0004-6361/202554607" target="_blank" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-year">2025</div>
+                <div class="pub-content">
+                    <strong>Euclid Quick Data Release: Near-infrared processing and data products</strong>
+                    <div class="pub-journal">Astronomy &amp; Astrophysics (Q1, IF: 6.1)</div>
+                    <div class="pub-authors">Polenta, G., et al. (including <strong>Bella, M.</strong>)</div>
+                    <div class="pub-links">
+                        <a href="https://doi.org/10.1051/0004-6361/202554657" target="_blank" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-year">2024</div>
+                <div class="pub-content">
+                    <strong>Euclid. I. Overview of the Euclid mission</strong>
+                    <div class="pub-journal">Astronomy &amp; Astrophysics (Q1, IF: 6.1)</div>
+                    <div class="pub-authors">Mellier, Y., et al. (including <strong>Bella, M.</strong>)</div>
+                    <div class="pub-links">
+                        <a href="https://doi.org/10.1051/0004-6361/202450810" target="_blank" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="pub-category">
+        <div class="pub-category-header">
+            <h3><i class="fas fa-microphone"></i> International Conference Papers</h3>
+            <span class="pub-count">4</span>
+        </div>
+        <div class="pub-list">
+
             <div class="pub-item">
                 <div class="pub-year">2024</div>
                 <div class="pub-content">
                     <strong>Fourier domain approach for galaxy spectra decontamination and deconvolution</strong>
-                    <div class="pub-journal">ICASSP 2024 — IEEE International Conference on Acoustics, Speech and Signal Processing</div>
-                    <div class="pub-links"><a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a></div>
+                    <div class="pub-journal">Proc. IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP 2024), pp. 5995-5999, Seoul, Korea</div>
+                    <div class="pub-authors">Bella, M., Hosseini, S., Saylani, H., Contini, T., Guerrero, A., &amp; Deville, Y.</div>
+                    <div class="pub-links">
+                        <a href="https://doi.org/10.1109/ICASSP48485.2024.10446554" target="_blank" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a>
+                    </div>
                 </div>
             </div>
+
             <div class="pub-item">
                 <div class="pub-year">2022</div>
                 <div class="pub-content">
                     <strong>Bin-wise combination of time-frequency masking and beamforming for convolutive source separation</strong>
-                    <div class="pub-journal">MMSP 2022 — IEEE Workshop on Multimedia Signal Processing</div>
-                    <div class="pub-links"><a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a></div>
+                    <div class="pub-journal">Proc. IEEE International Workshop on Multimedia Signal Processing (MMSP 2022), pp. 741-747</div>
+                    <div class="pub-authors">Bella, M., Saylani, H., Hosseini, S., &amp; Deville, Y.</div>
+                    <div class="pub-links">
+                        <a href="https://doi.org/10.1109/MMSP55362.2022.9949527" target="_blank" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a>
+                    </div>
                 </div>
             </div>
+
             <div class="pub-item">
                 <div class="pub-year">2022</div>
                 <div class="pub-content">
                     <strong>Decontamination of galaxy spectra using four dispersion directions</strong>
-                    <div class="pub-journal">EUSIPCO 2022 — European Signal Processing Conference</div>
-                    <div class="pub-links"><a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a></div>
+                    <div class="pub-journal">Proc. 30th European Signal Processing Conference (EUSIPCO 2022), pp. 1981-1985</div>
+                    <div class="pub-authors">Bella, M., Hosseini, S., Saylani, H., Contini, T., Grégoire, T., Guerrero, A., &amp; Deville, Y.</div>
+                    <div class="pub-links">
+                        <a href="https://doi.org/10.23919/EUSIPCO55093.2022.9909916" target="_blank" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a>
+                    </div>
                 </div>
             </div>
+
             <div class="pub-item">
                 <div class="pub-year">2020</div>
                 <div class="pub-content">
-                    <strong>A New Sparse BSS Method for Determined Convolutive Mixtures</strong>
-                    <div class="pub-journal">LNCS / Springer — Lecture Notes in Computer Science</div>
-                    <div class="pub-links"><a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a></div>
+                    <strong>A New Sparse BSS Method for Determined Convolutive Mixtures in Time-Frequency Domain</strong>
+                    <div class="pub-journal">Lecture Notes in Computer Science, vol. 12563, Springer, pp. 357-366</div>
+                    <div class="pub-authors">Bella, M. &amp; Saylani, H.</div>
+                    <div class="pub-links">
+                        <a href="https://doi.org/10.1007/978-3-030-51935-3_38" target="_blank" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
 
-<!-- SKILLS -->
-<section class="skills-section reveal" id="skills">
-    <div class="section-header">
-        <div class="section-label">Technologies</div>
-        <h2 class="section-title">Skills & Tools</h2>
-        <p class="section-desc">Programming languages, frameworks, and tools for robust signal processing and ML systems.</p>
-    </div>
-    <div class="skills-container">
-        <div class="skill-category">
-            <h4><i class="fas fa-code"></i> Programming</h4>
-            <div class="skill-bars">
-                <div class="skill-bar"><span class="skill-name">Python</span><div class="skill-track"><div class="skill-level" style="width:95%"></div></div></div>
-                <div class="skill-bar"><span class="skill-name">MATLAB</span><div class="skill-track"><div class="skill-level" style="width:90%"></div></div></div>
-                <div class="skill-bar"><span class="skill-name">C / C++</span><div class="skill-track"><div class="skill-level" style="width:70%"></div></div></div>
-                <div class="skill-bar"><span class="skill-name">Fortran</span><div class="skill-track"><div class="skill-level" style="width:60%"></div></div></div>
-            </div>
-        </div>
-        <div class="skill-category">
-            <h4><i class="fas fa-brain"></i> Machine Learning</h4>
-            <div class="skill-bars">
-                <div class="skill-bar"><span class="skill-name">TensorFlow / Keras</span><div class="skill-track"><div class="skill-level" style="width:95%"></div></div></div>
-                <div class="skill-bar"><span class="skill-name">PyTorch</span><div class="skill-track"><div class="skill-level" style="width:80%"></div></div></div>
-                <div class="skill-bar"><span class="skill-name">scikit-learn</span><div class="skill-track"><div class="skill-level" style="width:85%"></div></div></div>
-            </div>
-        </div>
-        <div class="skill-category">
-            <h4><i class="fas fa-calculator"></i> Scientific Computing</h4>
-            <div class="skill-bars">
-                <div class="skill-bar"><span class="skill-name">NumPy / SciPy</span><div class="skill-track"><div class="skill-level" style="width:95%"></div></div></div>
-                <div class="skill-bar"><span class="skill-name">pandas</span><div class="skill-track"><div class="skill-level" style="width:85%"></div></div></div>
-                <div class="skill-bar"><span class="skill-name">Matplotlib</span><div class="skill-track"><div class="skill-level" style="width:90%"></div></div></div>
-                <div class="skill-bar"><span class="skill-name">Jupyter</span><div class="skill-track"><div class="skill-level" style="width:90%"></div></div></div>
-            </div>
-        </div>
-        <div class="skill-category">
-            <h4><i class="fas fa-cogs"></i> Engineering</h4>
-            <div class="skill-bars">
-                <div class="skill-bar"><span class="skill-name">Linux</span><div class="skill-track"><div class="skill-level" style="width:90%"></div></div></div>
-                <div class="skill-bar"><span class="skill-name">Git / GitHub</span><div class="skill-track"><div class="skill-level" style="width:90%"></div></div></div>
-                <div class="skill-bar"><span class="skill-name">CUDA / GPU</span><div class="skill-track"><div class="skill-level" style="width:85%"></div></div></div>
-                <div class="skill-bar"><span class="skill-name">LaTeX</span><div class="skill-track"><div class="skill-level" style="width:95%"></div></div></div>
-            </div>
         </div>
     </div>
 
-    <!-- Radar Chart -->
-    <div style="margin-top: 3rem; text-align: center;">
-        <div class="section-label" style="margin-bottom: 1.5rem;">Competency Radar</div>
-        <svg width="360" height="300" viewBox="0 0 360 300" style="max-width: 100%;">
-            <defs>
-                <radialGradient id="radarFill" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2"/>
-                    <stop offset="100%" stop-color="#818cf8" stop-opacity="0.05"/>
-                </radialGradient>
-            </defs>
-            <!-- Background grid -->
-            <polygon points="180,30 310,105 310,225 180,300 50,225 50,105" fill="none" stroke="rgba(56,189,248,0.1)" stroke-width="1"/>
-            <polygon points="180,60 265,110 265,210 180,260 95,210 95,110" fill="none" stroke="rgba(56,189,248,0.1)" stroke-width="1"/>
-            <polygon points="180,90 220,115 220,185 180,210 140,185 140,115" fill="none" stroke="rgba(56,189,248,0.1)" stroke-width="1"/>
-            <!-- Axis lines -->
-            <line x1="180" y1="30" x2="180" y2="300" stroke="rgba(56,189,248,0.15)" stroke-width="1"/>
-            <line x1="50" y1="105" x2="310" y2="105" stroke="rgba(56,189,248,0.15)" stroke-width="1"/>
-            <line x1="50" y1="225" x2="310" y2="225" stroke="rgba(56,189,248,0.15)" stroke-width="1"/>
-            <!-- Data polygon -->
-            <polygon points="180,45 290,115 280,205 180,275 80,215 70,115" fill="url(#radarFill)" stroke="#38bdf8" stroke-width="2" opacity="0.8"/>
-            <!-- Data points -->
-            <circle cx="180" cy="45" r="4" fill="#38bdf8"/><circle cx="290" cy="115" r="4" fill="#38bdf8"/>
-            <circle cx="280" cy="205" r="4" fill="#38bdf8"/><circle cx="180" cy="275" r="4" fill="#38bdf8"/>
-            <circle cx="80" cy="215" r="4" fill="#38bdf8"/><circle cx="70" cy="115" r="4" fill="#38bdf8"/>
-            <!-- Labels -->
-            <text x="180" y="20" text-anchor="middle" fill="#38bdf8" font-size="10" font-weight="600">Signal Proc.</text>
-            <text x="330" y="105" text-anchor="start" fill="#818cf8" font-size="10" font-weight="600">Deep Learning</text>
-            <text x="330" y="235" text-anchor="start" fill="#c084fc" font-size="10" font-weight="600">Astrophysics</text>
-            <text x="180" y="320" text-anchor="middle" fill="#34d399" font-size="10" font-weight="600">Audio Proc.</text>
-            <text x="30" y="235" text-anchor="end" fill="#f472b6" font-size="10" font-weight="600">GPU/CUDA</text>
-            <text x="30" y="105" text-anchor="end" fill="#38bdf8" font-size="10" font-weight="600">Sci. Writing</text>
-        </svg>
-    </div>
-</section>
-
-<!-- EDUCATION -->
-<section class="education-section reveal" id="education">
-    <div class="section-header">
-        <div class="section-label">Education</div>
-        <h2 class="section-title">Academic Background</h2>
-        <p class="section-desc">From Morocco to France, building expertise in signal processing and AI.</p>
-    </div>
-    <div class="timeline">
-        <div class="timeline-item">
-            <div class="timeline-marker">🎓</div>
-            <div class="timeline-content">
-                <h4>PhD — Signal Processing & Artificial Intelligence</h4>
-                <p class="timeline-place"><i class="fas fa-university"></i> Université de Toulouse, France</p>
-                <p class="timeline-thesis">Thesis: <em>Blind Source Separation in Convolutive Mixtures: Applications to Astrophysical and Audio Signals</em></p>
-                <span class="timeline-date">2019 — 2023</span>
-            </div>
+    <div class="pub-category">
+        <div class="pub-category-header">
+            <h3><i class="fas fa-language"></i> National Conference Papers</h3>
+            <span class="pub-count">2</span>
         </div>
-        <div class="timeline-item">
-            <div class="timeline-marker">📚</div>
-            <div class="timeline-content">
-                <h4>MSc — Electronics, Systems & Telecommunications</h4>
-                <p class="timeline-place"><i class="fas fa-university"></i> Ibn Zohr University, Agadir, Morocco</p>
-                <p class="timeline-thesis">Specialization in signal processing, communication systems, and digital electronics.</p>
-                <span class="timeline-date">2016 — 2018</span>
+        <div class="pub-list">
+
+            <div class="pub-item">
+                <div class="pub-year">2022</div>
+                <div class="pub-content">
+                    <strong>Séparation de Sources en Mélanges Convolutifs Sous-déterminés Combinant Masquage et formation de voie</strong>
+                    <div class="pub-journal">Colloque Francophone de Traitement du Signal et des Images (GRETSI 2022), pp. 913-916</div>
+                    <div class="pub-authors">Bella, M., et al.</div>
+                    <div class="pub-links">
+                        <a href="https://www.gretsi.fr/data/colloque/pdf/2022_bella995.pdf" target="_blank" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a>
+                    </div>
+                </div>
             </div>
+
+            <div class="pub-item">
+                <div class="pub-year">2022</div>
+                <div class="pub-content">
+                    <strong>Décontamination des spectres de galaxies en exploitant quatre directions de dispersion</strong>
+                    <div class="pub-journal">Colloque Francophone de Traitement du Signal et des Images (GRETSI 2022), pp. 1245-1248</div>
+                    <div class="pub-authors">Bella, M., et al.</div>
+                    <div class="pub-links">
+                        <a href="https://www.gretsi.fr/data/colloque/pdf/2022_bella799.pdf" target="_blank" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="pub-category">
+        <div class="pub-category-header">
+            <h3><i class="fas fa-chart-line"></i> Research Profiles</h3>
+        </div>
+        <div class="publication-profiles">
+            <a href="https://scholar.google.com/citations?user=zpKmY9IAAAAJ&hl=fr&oi=ao" target="_blank" class="profile-link"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+            <a href="https://www.researchgate.net/profile/Mostafa-Bella" target="_blank" class="profile-link"><i class="fab fa-researchgate"></i> ResearchGate</a>
+            <a href="https://www.linkedin.com/in/mostafa-bella-2667a619/" target="_blank" class="profile-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com/mbella821" target="_blank" class="profile-link"><i class="fab fa-github"></i> GitHub</a>
         </div>
     </div>
 </section>
@@ -1202,7 +1269,7 @@
             <h4>Email</h4>
             <p>mbella@irap.omp.eu</p>
         </a>
-        <a href="https://www.linkedin.com/in/mostafa-bella-9b8b3b1b0/" target="_blank" class="contact-card">
+        <a href="https://www.linkedin.com/in/mostafa-bella-2667a6197/" target="_blank" class="contact-card">
             <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
             <h4>LinkedIn</h4>
             <p>Professional Profile</p>
@@ -1211,6 +1278,16 @@
             <div class="contact-icon"><i class="fab fa-github"></i></div>
             <h4>GitHub</h4>
             <p>Code & Projects</p>
+        </a>
+        <a href="https://scholar.google.com/citations?user=zpKmY9IAAAAJ&hl=fr&oi=ao" target="_blank" class="contact-card">
+            <div class="contact-icon"><i class="fas fa-graduation-cap"></i></div>
+            <h4>Google Scholar</h4>
+            <p>Publications & citations</p>
+        </a>
+        <a href="https://www.researchgate.net/profile/Mostafa-Bella" target="_blank" class="contact-card">
+            <div class="contact-icon"><i class="fab fa-researchgate"></i></div>
+            <h4>ResearchGate</h4>
+            <p>Research profile</p>
         </a>
         <div class="contact-card">
             <div class="contact-icon"><i class="fas fa-building"></i></div>
@@ -1224,11 +1301,13 @@
 <footer class="footer">
     <div class="footer-social">
         <a href="mailto:mbella@irap.omp.eu" aria-label="Email"><i class="fas fa-envelope"></i></a>
-        <a href="https://www.linkedin.com/in/mostafa-bella-9b8b3b1b0/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.linkedin.com/in/mostafa-bella-2667a6197/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         <a href="https://github.com/mbella821" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://scholar.google.com/citations?user=zpKmY9IAAAAJ&hl=fr&oi=ao" target="_blank" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+        <a href="https://www.researchgate.net/profile/Mostafa-Bella" target="_blank" aria-label="ResearchGate"><i class="fab fa-researchgate"></i></a>
     </div>
-    <p>© 2026 Dr. Mostafa BELLA — Signal Processing Researcher</p>
-    <p class="footer-sub">IRAP / Université de Toulouse — Toulouse, France</p>
+    <p>© 2026 Dr. Mostafa BELLA  -  Signal Processing Researcher</p>
+    <p class="footer-sub">IRAP / Université de Toulouse  -  Toulouse, France</p>
 </footer>
 
 <script>
@@ -1251,19 +1330,6 @@
         entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-    // Animate skill bars
-    const skillObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const bar = entry.target;
-                const w = bar.style.width;
-                bar.style.width = '0%';
-                setTimeout(() => bar.style.width = w, 100);
-            }
-        });
-    }, { threshold: 0.5 });
-    document.querySelectorAll('.skill-level').forEach(bar => skillObserver.observe(bar));
 </script>
 
 </body>
